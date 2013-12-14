@@ -1,2 +1,0 @@
-/home/fei/leetcode/third_party/gtest-1.7.0/CMakeFiles/gtest.dir
-/home/fei/leetcode/third_party/gtest-1.7.0/CMakeFiles/gtest_main.dir
