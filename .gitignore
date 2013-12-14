@@ -1,0 +1,3 @@
+/third_party/gtest-1.7.0
+/src/*/*.o
+/src/*_test
