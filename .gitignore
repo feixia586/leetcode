@@ -2,3 +2,4 @@
 /src/*/*.o
 /src/*_test
 /src/*/.*.*.swp
+/src/*/*.*~

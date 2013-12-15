@@ -8,9 +8,11 @@ CFLAGS = $(WARN) $(OPT) $(INCPATH)
 
 GTEST = -L../third_party/gtest-1.7.0 -lgtest_main -lgtest -lpthread
 
-OBJECTS = ./0_start/helloworld.o
+OBJECTS = ./0_start/helloworld.o \
+		  ./1_TwoSum/TwoSum.o \
 
-TESTS = helloworld_test
+TESTS = helloworld_test \
+		TwoSum_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -23,6 +25,7 @@ gtest:
 
 helloworld_test: 0_start/helloworld_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
-
+TwoSum_test: 1_TwoSum/TwoSum_test.cc $(OBJECTS)
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 clean:
-	rm -f */*.o *.a
+	rm -f */*.o *_test
