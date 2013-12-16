@@ -27,10 +27,15 @@ public:
         all[k] = A[i];
     }
 
-    if (size % 2 != 0)
-      return all[mid];
-    else
-      return (all[mid-1] + all[mid]) / 2.0;
+    if (size % 2 != 0) {
+      int tmp = all[mid];
+      delete[] all;
+      return tmp;
+    } else {
+      double tmp = (all[mid-1] + all[mid]) / 2.0;
+      delete[] all;
+      return tmp;
+    }
 
   }
 };
