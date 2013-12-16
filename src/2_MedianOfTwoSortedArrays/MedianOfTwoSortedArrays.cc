@@ -1,5 +1,7 @@
 class Solution {
 public:
+  // Time O(m+n); Space O(m+n)
+  // Idea: do merge sorting first, then calculate the median
   double findMedianSortedArrays(int A[], int m, int B[], int n) {
     int size = m + n;
     int mid = size / 2;
