@@ -14,6 +14,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./3_LongestSubstringWithoutRepeatingCharacters/LongestSubstringWithoutRepeatingCharacters.o \
 		  ./4_AddTwoNumbers/AddTwoNumbers.o \
 		  ./5_LongestPalindromicSubstring/LongestPalindromicSubstring.o \
+		  ./6_ZigZagConversion/ZigZagConversion.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -21,6 +22,7 @@ TESTS = helloworld_test \
 		LongestSubstringWithoutRepeatingCharacters_test \
 		AddTwoNumbers_test \
 		LongestPalindromicSubstring_test \
+		ZigZagConversion_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -42,6 +44,8 @@ LongestSubstringWithoutRepeatingCharacters_test: ./3_LongestSubstringWithoutRepe
 AddTwoNumbers_test: ./4_AddTwoNumbers/AddTwoNumbers_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LongestPalindromicSubstring_test: ./5_LongestPalindromicSubstring/LongestPalindromicSubstring_test.cc $(OBJECTS)
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ZigZagConversion_test: ./6_ZigZagConversion/ZigZagConversion_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 clean:
 	rm -f */*.o *_test
