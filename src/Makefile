@@ -13,12 +13,14 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./2_MedianOfTwoSortedArrays/MedianOfTwoSortedArrays.o \
 		  ./3_LongestSubstringWithoutRepeatingCharacters/LongestSubstringWithoutRepeatingCharacters.o \
 		  ./4_AddTwoNumbers/AddTwoNumbers.o \
+		  ./5_LongestPalindromicSubstring/LongestPalindromicSubstring.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
 		MedianOfTwoSortedArrays_test \
 		LongestSubstringWithoutRepeatingCharacters_test \
 		AddTwoNumbers_test \
+		LongestPalindromicSubstring_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -38,6 +40,8 @@ MedianOfTwoSortedArrays_test: ./2_MedianOfTwoSortedArrays/MedianOfTwoSortedArray
 LongestSubstringWithoutRepeatingCharacters_test: ./3_LongestSubstringWithoutRepeatingCharacters/LongestSubstringWithoutRepeatingCharacters_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 AddTwoNumbers_test: ./4_AddTwoNumbers/AddTwoNumbers_test.cc $(OBJECTS)
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LongestPalindromicSubstring_test: ./5_LongestPalindromicSubstring/LongestPalindromicSubstring_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 clean:
 	rm -f */*.o *_test
