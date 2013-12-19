@@ -17,6 +17,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./6_ZigZagConversion/ZigZagConversion.o \
 		  ./7_ReverseInteger/ReverseInteger.o \
 		  ./8_StringToInteger/StringToInteger.o \
+		  ./9_PalindromeNumber/PalindromeNumber.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -27,6 +28,7 @@ TESTS = helloworld_test \
 		ZigZagConversion_test \
 		ReverseInteger_test \
 		StringToInteger_test \
+		PalindromeNumber_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -54,6 +56,8 @@ ZigZagConversion_test: ./6_ZigZagConversion/ZigZagConversion_test.cc $(OBJECTS)
 ReverseInteger_test: ./7_ReverseInteger/ReverseInteger_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 StringToInteger_test: ./8_StringToInteger/StringToInteger_test.cc $(OBJECTS)
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PalindromeNumber_test: ./9_PalindromeNumber/PalindromeNumber_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
