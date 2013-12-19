@@ -15,6 +15,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./4_AddTwoNumbers/AddTwoNumbers.o \
 		  ./5_LongestPalindromicSubstring/LongestPalindromicSubstring.o \
 		  ./6_ZigZagConversion/ZigZagConversion.o \
+		  ./7_ReverseInteger/ReverseInteger.o \
+		  ./8_StringToInteger/StringToInteger.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -23,6 +25,8 @@ TESTS = helloworld_test \
 		AddTwoNumbers_test \
 		LongestPalindromicSubstring_test \
 		ZigZagConversion_test \
+		ReverseInteger_test \
+		StringToInteger_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -47,5 +51,10 @@ LongestPalindromicSubstring_test: ./5_LongestPalindromicSubstring/LongestPalindr
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ZigZagConversion_test: ./6_ZigZagConversion/ZigZagConversion_test.cc $(OBJECTS)
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ReverseInteger_test: ./7_ReverseInteger/ReverseInteger_test.cc $(OBJECTS)
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+StringToInteger_test: ./8_StringToInteger/StringToInteger_test.cc $(OBJECTS)
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+
 clean:
 	rm -f */*.o *_test
