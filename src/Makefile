@@ -18,6 +18,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./7_ReverseInteger/ReverseInteger.o \
 		  ./8_StringToInteger/StringToInteger.o \
 		  ./9_PalindromeNumber/PalindromeNumber.o \
+		  ./10_RegularExpressionMatching/RegularExpressionMatching.o \
 		  ./11_ContainerWithMostWater/ContainerWithMostWater.o \
 
 TESTS = helloworld_test \
@@ -30,6 +31,7 @@ TESTS = helloworld_test \
 		ReverseInteger_test \
 		StringToInteger_test \
 		PalindromeNumber_test \
+		RegularExpressionMatching_test \
 		ContainerWithMostWater_test \
 
 all: gtest $(OBJECTS) $(TESTS)
@@ -60,6 +62,8 @@ ReverseInteger_test: ./7_ReverseInteger/ReverseInteger_test.cc ./7_ReverseIntege
 StringToInteger_test: ./8_StringToInteger/StringToInteger_test.cc ./8_StringToInteger/StringToInteger.o 
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PalindromeNumber_test: ./9_PalindromeNumber/PalindromeNumber_test.cc ./9_PalindromeNumber/PalindromeNumber.o 
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RegularExpressionMatching_test: ./10_RegularExpressionMatching/RegularExpressionMatching_test.cc ./10_RegularExpressionMatching/RegularExpressionMatching.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ContainerWithMostWater_test: ./11_ContainerWithMostWater/ContainerWithMostWater_test.cc ./11_ContainerWithMostWater/ContainerWithMostWater.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
