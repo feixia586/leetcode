@@ -1,0 +1,3 @@
+Some Programming Notes:
+1. In C++, how to do string append efficiently? Use stringstream instead of "+";
+2. Do more exercise in divide sth --> Loop

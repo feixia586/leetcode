@@ -20,6 +20,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./9_PalindromeNumber/PalindromeNumber.o \
 		  ./10_RegularExpressionMatching/RegularExpressionMatching.o \
 		  ./11_ContainerWithMostWater/ContainerWithMostWater.o \
+		  ./12_IntegerToRoman/IntegerToRoman.o \
+		  ./13_RomanToInteger/RomanToInteger.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -33,6 +35,8 @@ TESTS = helloworld_test \
 		PalindromeNumber_test \
 		RegularExpressionMatching_test \
 		ContainerWithMostWater_test \
+		IntegerToRoman_test \
+		RomanToInteger_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -66,6 +70,10 @@ PalindromeNumber_test: ./9_PalindromeNumber/PalindromeNumber_test.cc ./9_Palindr
 RegularExpressionMatching_test: ./10_RegularExpressionMatching/RegularExpressionMatching_test.cc ./10_RegularExpressionMatching/RegularExpressionMatching.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ContainerWithMostWater_test: ./11_ContainerWithMostWater/ContainerWithMostWater_test.cc ./11_ContainerWithMostWater/ContainerWithMostWater.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+IntegerToRoman_test: ./12_IntegerToRoman/IntegerToRoman_test.cc ./12_IntegerToRoman/IntegerToRoman.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RomanToInteger_test: ./13_RomanToInteger/RomanToInteger_test.cc ./13_RomanToInteger/RomanToInteger.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
