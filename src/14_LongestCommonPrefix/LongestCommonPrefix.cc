@@ -10,16 +10,17 @@ public:
     if(len == 0)
       return "";
 
-    return LCP(strs, 0, len-1);
+    // return LCP(strs, 0, len-1);
+    return go_through(strs);
   }
 
+  /*************************************************************
+   * Divide and Conquer Method
+   *************************************************************/
   string LCP(vector<string>& strs, int low, int high) {
     if (low == high)
       return strs[low];
     if (low == high-1) {
-      //int p = 0;
-      //while (strs[low][p] == strs[high][p]) p++;
-      //return strs[low].substr(0, p);
       return get_com_prefix(strs[low], strs[high]);
     }
 
@@ -30,8 +31,26 @@ public:
   }
 
   string get_com_prefix(string& str1, string& str2) {
-    int p = 0;
-    while (str1[p] == str2[p]) p++;
+    size_t p = 0;
+    while (p < str1.length() && p < str2.length()) {
+      if (str1[p] == str2[p]) p++;
+      else break;
+    }
     return str1.substr(0, p);
   }
+
+  /*************************************************************
+   * Most Suitable Method
+   *************************************************************/
+  string go_through(vector<string>& strs) {
+    if (strs.size() == 1)
+      return strs[0];
+
+    string res = strs[0];
+    for (size_t i = 1; i < strs.size(); i++) {
+      res = get_com_prefix(res, strs[i]);
+    }
+    return res;
+  }
+
 };

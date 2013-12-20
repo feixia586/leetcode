@@ -22,6 +22,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./11_ContainerWithMostWater/ContainerWithMostWater.o \
 		  ./12_IntegerToRoman/IntegerToRoman.o \
 		  ./13_RomanToInteger/RomanToInteger.o \
+		  ./14_LongestCommonPrefix/LongestCommonPrefix.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -37,6 +38,7 @@ TESTS = helloworld_test \
 		ContainerWithMostWater_test \
 		IntegerToRoman_test \
 		RomanToInteger_test \
+		LongestCommonPrefix_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -74,6 +76,8 @@ ContainerWithMostWater_test: ./11_ContainerWithMostWater/ContainerWithMostWater_
 IntegerToRoman_test: ./12_IntegerToRoman/IntegerToRoman_test.cc ./12_IntegerToRoman/IntegerToRoman.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RomanToInteger_test: ./13_RomanToInteger/RomanToInteger_test.cc ./13_RomanToInteger/RomanToInteger.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LongestCommonPrefix_test: ./14_LongestCommonPrefix/LongestCommonPrefix_test.cc ./14_LongestCommonPrefix/LongestCommonPrefix.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
