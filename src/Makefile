@@ -25,6 +25,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./14_LongestCommonPrefix/LongestCommonPrefix.o \
 		  ./15_ThreeSum/ThreeSum.o \
 		  ./16_ThreeSumClosest/ThreeSumClosest.o \
+		  ./17_FourSum/FourSum.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -43,6 +44,7 @@ TESTS = helloworld_test \
 		LongestCommonPrefix_test \
 		ThreeSum_test \
 		ThreeSumClosest_test \
+		FourSum_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -86,6 +88,8 @@ LongestCommonPrefix_test: ./14_LongestCommonPrefix/LongestCommonPrefix_test.cc .
 ThreeSum_test: ./15_ThreeSum/ThreeSum_test.cc ./15_ThreeSum/ThreeSum.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ThreeSumClosest_test: ./16_ThreeSumClosest/ThreeSumClosest_test.cc ./16_ThreeSumClosest/ThreeSumClosest.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+FourSum_test: ./17_FourSum/FourSum_test.cc ./17_FourSum/FourSum.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
