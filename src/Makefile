@@ -23,7 +23,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./12_IntegerToRoman/IntegerToRoman.o \
 		  ./13_RomanToInteger/RomanToInteger.o \
 		  ./14_LongestCommonPrefix/LongestCommonPrefix.o \
-		  ./15_3Sum/3Sum.o
+		  ./15_ThreeSum/ThreeSum.o \
+		  ./16_ThreeSumClosest/ThreeSumClosest.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -40,7 +41,8 @@ TESTS = helloworld_test \
 		IntegerToRoman_test \
 		RomanToInteger_test \
 		LongestCommonPrefix_test \
-		3Sum_test \
+		ThreeSum_test \
+		ThreeSumClosest_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -81,7 +83,9 @@ RomanToInteger_test: ./13_RomanToInteger/RomanToInteger_test.cc ./13_RomanToInte
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LongestCommonPrefix_test: ./14_LongestCommonPrefix/LongestCommonPrefix_test.cc ./14_LongestCommonPrefix/LongestCommonPrefix.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
-3Sum_test: ./15_3Sum/3Sum_test.cc ./15_3Sum/3Sum.o
+ThreeSum_test: ./15_ThreeSum/ThreeSum_test.cc ./15_ThreeSum/ThreeSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ThreeSumClosest_test: ./16_ThreeSumClosest/ThreeSumClosest_test.cc ./16_ThreeSumClosest/ThreeSumClosest.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
