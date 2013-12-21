@@ -23,6 +23,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./12_IntegerToRoman/IntegerToRoman.o \
 		  ./13_RomanToInteger/RomanToInteger.o \
 		  ./14_LongestCommonPrefix/LongestCommonPrefix.o \
+		  ./15_3Sum/3Sum.o
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -39,6 +40,7 @@ TESTS = helloworld_test \
 		IntegerToRoman_test \
 		RomanToInteger_test \
 		LongestCommonPrefix_test \
+		3Sum_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -78,6 +80,8 @@ IntegerToRoman_test: ./12_IntegerToRoman/IntegerToRoman_test.cc ./12_IntegerToRo
 RomanToInteger_test: ./13_RomanToInteger/RomanToInteger_test.cc ./13_RomanToInteger/RomanToInteger.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LongestCommonPrefix_test: ./14_LongestCommonPrefix/LongestCommonPrefix_test.cc ./14_LongestCommonPrefix/LongestCommonPrefix.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+3Sum_test: ./15_3Sum/3Sum_test.cc ./15_3Sum/3Sum.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
