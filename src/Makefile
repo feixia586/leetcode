@@ -26,6 +26,9 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./15_ThreeSum/ThreeSum.o \
 		  ./16_ThreeSumClosest/ThreeSumClosest.o \
 		  ./17_FourSum/FourSum.o \
+		  ./18_LetterCombinationsOfAPhoneNumber/LetterCombinationsOfAPhoneNumber.o \
+		  ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList.o \
+		  ./20_ValidParentheses/ValidParenttheses.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -45,6 +48,9 @@ TESTS = helloworld_test \
 		ThreeSum_test \
 		ThreeSumClosest_test \
 		FourSum_test \
+		LetterCombinationsOfAPhoneNumber_test \
+		RemoveNthNodeFromEndOfList_test \
+		ValidParenttheses_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -90,6 +96,12 @@ ThreeSum_test: ./15_ThreeSum/ThreeSum_test.cc ./15_ThreeSum/ThreeSum.o
 ThreeSumClosest_test: ./16_ThreeSumClosest/ThreeSumClosest_test.cc ./16_ThreeSumClosest/ThreeSumClosest.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 FourSum_test: ./17_FourSum/FourSum_test.cc ./17_FourSum/FourSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LetterCombinationsOfAPhoneNumber_test: ./18_LetterCombinationsOfAPhoneNumber/LetterCombinationsOfAPhoneNumber_test.cc ./18_LetterCombinationsOfAPhoneNumber/LetterCombinationsOfAPhoneNumber.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RemoveNthNodeFromEndOfList_test: ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList_test.cc ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ValidParenttheses_test: ./20_ValidParentheses/ValidParenttheses_test.cc ./20_ValidParentheses/ValidParenttheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
