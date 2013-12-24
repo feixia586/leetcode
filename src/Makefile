@@ -29,6 +29,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./18_LetterCombinationsOfAPhoneNumber/LetterCombinationsOfAPhoneNumber.o \
 		  ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList.o \
 		  ./20_ValidParentheses/ValidParenttheses.o \
+		  ./21_GenerateParentheses/GenerateParentheses.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -51,6 +52,7 @@ TESTS = helloworld_test \
 		LetterCombinationsOfAPhoneNumber_test \
 		RemoveNthNodeFromEndOfList_test \
 		ValidParenttheses_test \
+		GenerateParentheses_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -102,6 +104,8 @@ LetterCombinationsOfAPhoneNumber_test: ./18_LetterCombinationsOfAPhoneNumber/Let
 RemoveNthNodeFromEndOfList_test: ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList_test.cc ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ValidParenttheses_test: ./20_ValidParentheses/ValidParenttheses_test.cc ./20_ValidParentheses/ValidParenttheses.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+GenerateParentheses_test: ./21_GenerateParentheses/GenerateParentheses_test.cc ./21_GenerateParentheses/GenerateParentheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
