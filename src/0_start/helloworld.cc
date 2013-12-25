@@ -14,4 +14,5 @@ void HelloWorld::use_priority_queue() {
     cout << endl;
     while(!dec_order.empty())
     { cout << dec_order.top() << " "; dec_order.pop(); }
+    cout << endl;
   }
