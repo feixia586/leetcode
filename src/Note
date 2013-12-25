@@ -2,3 +2,4 @@ Some Programming Notes:
 1. In C++, how to do string append efficiently? Use stringstream instead of "+"? --> It seems using stringstream is slower than "+"
 2. Do more exercise in divide sth --> Loop
 3. DFS(recursive and non-recursive) and BFS
+4. String Match --> KMP, BM, Sunday
