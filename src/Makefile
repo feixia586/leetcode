@@ -30,6 +30,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList.o \
 		  ./20_ValidParentheses/ValidParenttheses.o \
 		  ./21_GenerateParentheses/GenerateParentheses.o \
+		  ./22_MergeKSortedLists \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -53,6 +54,7 @@ TESTS = helloworld_test \
 		RemoveNthNodeFromEndOfList_test \
 		ValidParenttheses_test \
 		GenerateParentheses_test \
+		MergeKSortedLists_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -106,6 +108,8 @@ RemoveNthNodeFromEndOfList_test: ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFr
 ValidParenttheses_test: ./20_ValidParentheses/ValidParenttheses_test.cc ./20_ValidParentheses/ValidParenttheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 GenerateParentheses_test: ./21_GenerateParentheses/GenerateParentheses_test.cc ./21_GenerateParentheses/GenerateParentheses.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MergeKSortedLists_test: ./22_MergeKSortedLists/MergeKSortedLists_test.cc ./22_MergeKSortedLists/MergeKSortedLists.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
