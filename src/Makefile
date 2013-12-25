@@ -31,6 +31,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./20_ValidParentheses/ValidParenttheses.o \
 		  ./21_GenerateParentheses/GenerateParentheses.o \
 		  ./22_MergeKSortedLists/MergeKSortedLists.o \
+		  ./23_SwapNodesInPairs/SwapNodesInPairs.o \
+		  ./24_ReverseNodesInKGroup/ReverseNodesInKGroup.o \
 		  ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o \
 		  ./26_RemoveElement/RemoveElement.o \
 
@@ -57,6 +59,8 @@ TESTS = helloworld_test \
 		ValidParenttheses_test \
 		GenerateParentheses_test \
 		MergeKSortedLists_test \
+		SwapNodesInPairs_test \
+		ReverseNodesInKGroup_test \
 		RemoveDuplicatesFromSortedArray_test \
 		RemoveElement_test \
 
@@ -114,6 +118,10 @@ ValidParenttheses_test: ./20_ValidParentheses/ValidParenttheses_test.cc ./20_Val
 GenerateParentheses_test: ./21_GenerateParentheses/GenerateParentheses_test.cc ./21_GenerateParentheses/GenerateParentheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeKSortedLists_test: ./22_MergeKSortedLists/MergeKSortedLists_test.cc ./22_MergeKSortedLists/MergeKSortedLists.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SwapNodesInPairs_test: ./23_SwapNodesInPairs/SwapNodesInPairs_test.cc ./23_SwapNodesInPairs/SwapNodesInPairs.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ReverseNodesInKGroup_test: ./24_ReverseNodesInKGroup/ReverseNodesInKGroup_test.cc ./24_ReverseNodesInKGroup/ReverseNodesInKGroup.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RemoveDuplicatesFromSortedArray_test: ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray_test.cc ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
