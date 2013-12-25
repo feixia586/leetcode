@@ -30,7 +30,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./19_RemoveNthNodeFromEndOfList/RemoveNthNodeFromEndOfList.o \
 		  ./20_ValidParentheses/ValidParenttheses.o \
 		  ./21_GenerateParentheses/GenerateParentheses.o \
-		  ./22_MergeKSortedLists \
+		  ./22_MergeKSortedLists/MergeKSortedLists.o \
+		  ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -55,6 +56,7 @@ TESTS = helloworld_test \
 		ValidParenttheses_test \
 		GenerateParentheses_test \
 		MergeKSortedLists_test \
+		RemoveDuplicatesFromSortedArray_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -110,6 +112,8 @@ ValidParenttheses_test: ./20_ValidParentheses/ValidParenttheses_test.cc ./20_Val
 GenerateParentheses_test: ./21_GenerateParentheses/GenerateParentheses_test.cc ./21_GenerateParentheses/GenerateParentheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeKSortedLists_test: ./22_MergeKSortedLists/MergeKSortedLists_test.cc ./22_MergeKSortedLists/MergeKSortedLists.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RemoveDuplicatesFromSortedArray_test: ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray_test.cc ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
