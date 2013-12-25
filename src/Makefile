@@ -32,6 +32,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./21_GenerateParentheses/GenerateParentheses.o \
 		  ./22_MergeKSortedLists/MergeKSortedLists.o \
 		  ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o \
+		  ./26_RemoveElement/RemoveElement.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -57,6 +58,7 @@ TESTS = helloworld_test \
 		GenerateParentheses_test \
 		MergeKSortedLists_test \
 		RemoveDuplicatesFromSortedArray_test \
+		RemoveElement_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -114,6 +116,8 @@ GenerateParentheses_test: ./21_GenerateParentheses/GenerateParentheses_test.cc .
 MergeKSortedLists_test: ./22_MergeKSortedLists/MergeKSortedLists_test.cc ./22_MergeKSortedLists/MergeKSortedLists.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RemoveDuplicatesFromSortedArray_test: ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray_test.cc ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RemoveElement_test: ./26_RemoveElement/RemoveElement_test.cc ./26_RemoveElement/RemoveElement.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
