@@ -3,6 +3,7 @@
 
 #include <queue>
 #include <iostream>
+#include <bitset>
 
 using namespace std;
 
@@ -21,6 +22,8 @@ typedef priority_queue<int, vector<int>, mycomparison> int_pq;
 class HelloWorld {
 public:
   void use_priority_queue();
+  void use_shift();
+  void ouput_binary(int n, int num);
 };
 
 #endif
