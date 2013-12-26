@@ -37,6 +37,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./26_RemoveElement/RemoveElement.o \
 		  ./27_ImplementStrStr/ImplementStrStr.o \
 		  ./28_DivideTwoIntegers/DivideTwoIntegers.o \
+		  ./29_SubstringWithConcatenationOfAllWords/SubstringWithConcatenationOfAllWords.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -67,6 +68,7 @@ TESTS = helloworld_test \
 		RemoveElement_test \
 		ImplementStrStr_test \
 		DivideTwoIntegers_test \
+		SubstringWithConcatenationOfAllWords_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -134,6 +136,8 @@ RemoveElement_test: ./26_RemoveElement/RemoveElement_test.cc ./26_RemoveElement/
 ImplementStrStr_test: ./27_ImplementStrStr/ImplementStrStr_test.cc ./27_ImplementStrStr/ImplementStrStr.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 DivideTwoIntegers_test: ./28_DivideTwoIntegers/DivideTwoIntegers_test.cc ./28_DivideTwoIntegers/DivideTwoIntegers.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SubstringWithConcatenationOfAllWords_test: ./29_SubstringWithConcatenationOfAllWords/SubstringWithConcatenationOfAllWords_test.cc ./29_SubstringWithConcatenationOfAllWords/SubstringWithConcatenationOfAllWords.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
