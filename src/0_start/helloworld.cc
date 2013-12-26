@@ -24,22 +24,22 @@ void HelloWorld::use_shift() {
   int lft_sft_a = a << 1;
   int rgt_sft_a = a >> 1;
   cout << a << ": left shift=" << lft_sft_a << "; right shift=" << rgt_sft_a << endl;
-  ouput_binary(8, a); cout << "\t";
-  ouput_binary(8, lft_sft_a); cout << "\t";
-  ouput_binary(8, rgt_sft_a); cout << "\t";
+  ouput_binary(a); cout << "\t";
+  ouput_binary(lft_sft_a); cout << "\t";
+  ouput_binary(rgt_sft_a); cout << "\t";
   cout << endl;
 
   int b = -5;
   int lft_sft_b = b << 1;
   int rgt_sft_b = b >> 1;
   cout << b << ": left shift=" << lft_sft_b << "; right shift=" << rgt_sft_b << endl;
-  ouput_binary(8, b); cout << "\t";
-  ouput_binary(8, lft_sft_b); cout << "\t";
-  ouput_binary(8, rgt_sft_b); cout << "\t";
+  ouput_binary(b); cout << "\t";
+  ouput_binary(lft_sft_b); cout << "\t";
+  ouput_binary(rgt_sft_b); cout << "\t";
   cout << endl;
 }
 
-void HelloWorld::ouput_binary(int n, int num) {
+void HelloWorld::ouput_binary(int num) {
   std::bitset<8> x(num);
   std::cout << x;
 }

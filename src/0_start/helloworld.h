@@ -23,7 +23,7 @@ class HelloWorld {
 public:
   void use_priority_queue();
   void use_shift();
-  void ouput_binary(int n, int num);
+  void ouput_binary(int num);
 };
 
 #endif
