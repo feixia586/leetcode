@@ -43,3 +43,11 @@ void HelloWorld::ouput_binary(int num) {
   std::bitset<8> x(num);
   std::cout << x;
 }
+
+void HelloWorld::some_operation() {
+  cout << "Some operation:" << endl;
+  cout << "-17 / 5 = " << -17 / 5 << endl;
+  cout << "-17 / (-5) = " << -17 / (-5) << endl;
+  cout << "-17 % 5 = " << -17 % 5 << endl;
+  cout << "-17 % (-5) = " << -17 % (-5) << endl;
+}

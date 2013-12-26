@@ -36,6 +36,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./25_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.o \
 		  ./26_RemoveElement/RemoveElement.o \
 		  ./27_ImplementStrStr/ImplementStrStr.o \
+		  ./28_DivideTwoIntegers/DivideTwoIntegers.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -65,6 +66,7 @@ TESTS = helloworld_test \
 		RemoveDuplicatesFromSortedArray_test \
 		RemoveElement_test \
 		ImplementStrStr_test \
+		DivideTwoIntegers_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -131,5 +133,8 @@ RemoveElement_test: ./26_RemoveElement/RemoveElement_test.cc ./26_RemoveElement/
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ImplementStrStr_test: ./27_ImplementStrStr/ImplementStrStr_test.cc ./27_ImplementStrStr/ImplementStrStr.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+DivideTwoIntegers_test: ./28_DivideTwoIntegers/DivideTwoIntegers_test.cc ./28_DivideTwoIntegers/DivideTwoIntegers.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+
 clean:
 	rm -f */*.o *_test

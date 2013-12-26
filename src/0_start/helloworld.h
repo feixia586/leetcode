@@ -24,6 +24,7 @@ public:
   void use_priority_queue();
   void use_shift();
   void ouput_binary(int num);
+  void some_operation();
 };
 
 #endif
