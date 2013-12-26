@@ -38,6 +38,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./27_ImplementStrStr/ImplementStrStr.o \
 		  ./28_DivideTwoIntegers/DivideTwoIntegers.o \
 		  ./29_SubstringWithConcatenationOfAllWords/SubstringWithConcatenationOfAllWords.o \
+		  ./30_NextPermutation/NextPermutation.o \
+		  ./31_LongestValidParentheses/LongestValidParentheses.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -69,6 +71,8 @@ TESTS = helloworld_test \
 		ImplementStrStr_test \
 		DivideTwoIntegers_test \
 		SubstringWithConcatenationOfAllWords_test \
+		NextPermutation_test \
+		LongestValidParentheses_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -138,6 +142,10 @@ ImplementStrStr_test: ./27_ImplementStrStr/ImplementStrStr_test.cc ./27_Implemen
 DivideTwoIntegers_test: ./28_DivideTwoIntegers/DivideTwoIntegers_test.cc ./28_DivideTwoIntegers/DivideTwoIntegers.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SubstringWithConcatenationOfAllWords_test: ./29_SubstringWithConcatenationOfAllWords/SubstringWithConcatenationOfAllWords_test.cc ./29_SubstringWithConcatenationOfAllWords/SubstringWithConcatenationOfAllWords.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+NextPermutation_test: ./30_NextPermutation/NextPermutation_test.cc ./30_NextPermutation/NextPermutation.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LongestValidParentheses_test: ./31_LongestValidParentheses/LongestValidParentheses_test.cc ./31_LongestValidParentheses/LongestValidParentheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
