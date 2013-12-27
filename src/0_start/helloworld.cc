@@ -18,6 +18,22 @@ void HelloWorld::use_priority_queue() {
   cout << endl;
 }
 
+void HelloWorld::use_sort() {
+  cout << "Usage of sort:" << endl;
+  vector<int> val;
+  val.push_back(0); val.push_back(50); val.push_back(40);
+  val.push_back(10);
+  sort(val.begin(), val.end(), mycomparison(true));
+  for (size_t i = 0; i < val.size(); i++)
+    cout << val[i] << "\t";
+  cout << endl;
+
+  sort(val.begin(), val.end(), mycomparison());
+  for (size_t i = 0; i < val.size(); i++)
+    cout << val[i] << "\t";
+  cout << endl;
+}
+
 void HelloWorld::use_shift() {
   cout << "Usage of shift:" << endl;
   int a = -6;
