@@ -41,6 +41,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./30_NextPermutation/NextPermutation.o \
 		  ./31_LongestValidParentheses/LongestValidParentheses.o \
 		  ./32_SearchInRotatedSortedArray/SearchInRotatedSortedArray.o \
+		  ./33_SearchForARange/SearchForARange.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -75,6 +76,7 @@ TESTS = helloworld_test \
 		NextPermutation_test \
 		LongestValidParentheses_test \
 		SearchInRotatedSortedArray_test \
+		SearchForARange_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -150,6 +152,8 @@ NextPermutation_test: ./30_NextPermutation/NextPermutation_test.cc ./30_NextPerm
 LongestValidParentheses_test: ./31_LongestValidParentheses/LongestValidParentheses_test.cc ./31_LongestValidParentheses/LongestValidParentheses.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SearchInRotatedSortedArray_test: ./32_SearchInRotatedSortedArray/SearchInRotatedSortedArray_test.cc ./32_SearchInRotatedSortedArray/SearchInRotatedSortedArray.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SearchForARange_test: ./33_SearchForARange/SearchForARange_test.cc ./33_SearchForARange/SearchForARange.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
