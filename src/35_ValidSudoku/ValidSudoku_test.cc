@@ -23,7 +23,7 @@ void draw_pic(vector<vector<char> > &board) {
     cout << endl;
   }
 
-  }
+}
 TEST(ValidSudoku, TestA) {
   Solution sol;
 
@@ -52,4 +52,6 @@ TEST(ValidSudoku, TestA) {
   draw_pic(board1);
   bool res1 = sol.isValidSudoku(board1);
   ASSERT_FALSE(res1);
+
+  cerr << "ATTENTION: Please Check the Answers Yourself!!!" << endl;
 }
