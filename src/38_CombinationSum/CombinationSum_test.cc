@@ -12,6 +12,7 @@ TEST(CombinationSum, TestA) {
   vector<int> candidates2;
   candidates2.push_back(2); candidates2.push_back(3);
   candidates2.push_back(6); candidates2.push_back(7);
+  vector<vector<int> > res2 = sol.combinationSum(candidates2, 7);
   ASSERT_EQ(2, res2.size());
   ASSERT_TRUE((res2[0].size() == 1 && res2[1].size() == 3) || (res2[0].size() == 3 && res2[1].size() == 1));
   if (res2[0].size() == 1 && res2[1].size() == 3) {
