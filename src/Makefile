@@ -44,6 +44,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./33_SearchForARange/SearchForARange.o \
 		  ./34_SearchInsertPosition/SearchInsertPosition.o \
 		  ./35_ValidSudoku/ValidSudoku.o \
+		  ./36_SudokuSolver/SudokuSolver.o \
+		  ./37_CountAndSay/CountAndSay.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -81,6 +83,8 @@ TESTS = helloworld_test \
 		SearchForARange_test \
 		SearchInsertPosition_test \
 		ValidSudoku_test \
+		SudokuSolver_test \
+		CountAndSay_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -162,6 +166,10 @@ SearchForARange_test: ./33_SearchForARange/SearchForARange_test.cc ./33_SearchFo
 SearchInsertPosition_test: ./34_SearchInsertPosition/SearchInsertPosition_test.cc ./34_SearchInsertPosition/SearchInsertPosition.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ValidSudoku_test: ./35_ValidSudoku/ValidSudoku_test.cc ./35_ValidSudoku/ValidSudoku.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SudokuSolver_test: ./36_SudokuSolver/SudokuSolver_test.cc ./36_SudokuSolver/SudokuSolver.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+CountAndSay_test: ./37_CountAndSay/CountAndSay_test.cc ./37_CountAndSay/CountAndSay.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
