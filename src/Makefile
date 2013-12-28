@@ -47,6 +47,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./36_SudokuSolver/SudokuSolver.o \
 		  ./37_CountAndSay/CountAndSay.o \
 		  ./38_CombinationSum/CombinationSum.o \
+		  ./39_CombinationSumII/CombinationSumII.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -87,6 +88,7 @@ TESTS = helloworld_test \
 		SudokuSolver_test \
 		CountAndSay_test \
 		CombinationSum_test \
+		CombinationSumII_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -174,6 +176,8 @@ SudokuSolver_test: ./36_SudokuSolver/SudokuSolver_test.cc ./36_SudokuSolver/Sudo
 CountAndSay_test: ./37_CountAndSay/CountAndSay_test.cc ./37_CountAndSay/CountAndSay.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CombinationSum_test: ./38_CombinationSum/CombinationSum_test.cc ./38_CombinationSum/CombinationSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+CombinationSumII_test: ./39_CombinationSumII/CombinationSumII_test.cc ./39_CombinationSumII/CombinationSumII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
