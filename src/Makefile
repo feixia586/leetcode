@@ -51,6 +51,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./40_FirstMissingPositive/FirstMissingPositive.o \
 		  ./41_TrappingRainWater/TrappingRainWater.o \
 		  ./42_MultiplyStrings/MultiplyStrings.o \
+		  ./43_WildcardMatching/WildcardMatching.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -95,6 +96,7 @@ TESTS = helloworld_test \
 		FirstMissingPositive_test \
 		TrappingRainWater_test \
 		MultiplyStrings_test \
+		WildcardMatching_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -190,6 +192,8 @@ FirstMissingPositive_test: ./40_FirstMissingPositive/FirstMissingPositive_test.c
 TrappingRainWater_test: ./41_TrappingRainWater/TrappingRainWater_test.cc ./41_TrappingRainWater/TrappingRainWater.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MultiplyStrings_test: ./42_MultiplyStrings/MultiplyStrings_test.cc ./42_MultiplyStrings/MultiplyStrings.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+WildcardMatching_test: ./43_WildcardMatching/WildcardMatching_test.cc ./43_WildcardMatching/WildcardMatching.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
