@@ -9,4 +9,7 @@ TEST(MultiplyStrings, TestA) {
 
   string res2 = sol.multiply("572", "324");
   ASSERT_EQ("185328", res2);
+
+  string res3 = sol.multiply("28", "92");
+  ASSERT_EQ("2576", res3);
 }
