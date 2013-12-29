@@ -48,6 +48,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./37_CountAndSay/CountAndSay.o \
 		  ./38_CombinationSum/CombinationSum.o \
 		  ./39_CombinationSumII/CombinationSumII.o \
+		  ./40_FirstMissingPositive/FirstMissingPositive.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -89,6 +90,7 @@ TESTS = helloworld_test \
 		CountAndSay_test \
 		CombinationSum_test \
 		CombinationSumII_test \
+		FirstMissingPositive_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -178,6 +180,8 @@ CountAndSay_test: ./37_CountAndSay/CountAndSay_test.cc ./37_CountAndSay/CountAnd
 CombinationSum_test: ./38_CombinationSum/CombinationSum_test.cc ./38_CombinationSum/CombinationSum.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CombinationSumII_test: ./39_CombinationSumII/CombinationSumII_test.cc ./39_CombinationSumII/CombinationSumII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+FirstMissingPositive_test: ./40_FirstMissingPositive/FirstMissingPositive_test.cc ./40_FirstMissingPositive/FirstMissingPositive.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
