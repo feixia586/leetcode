@@ -49,6 +49,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./38_CombinationSum/CombinationSum.o \
 		  ./39_CombinationSumII/CombinationSumII.o \
 		  ./40_FirstMissingPositive/FirstMissingPositive.o \
+		  ./41_TrappingRainWater/TrappingRainWater.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -91,6 +92,7 @@ TESTS = helloworld_test \
 		CombinationSum_test \
 		CombinationSumII_test \
 		FirstMissingPositive_test \
+		TrappingRainWater_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -182,6 +184,8 @@ CombinationSum_test: ./38_CombinationSum/CombinationSum_test.cc ./38_Combination
 CombinationSumII_test: ./39_CombinationSumII/CombinationSumII_test.cc ./39_CombinationSumII/CombinationSumII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 FirstMissingPositive_test: ./40_FirstMissingPositive/FirstMissingPositive_test.cc ./40_FirstMissingPositive/FirstMissingPositive.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+TrappingRainWater_test: ./41_TrappingRainWater/TrappingRainWater_test.cc ./41_TrappingRainWater/TrappingRainWater.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
