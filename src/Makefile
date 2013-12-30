@@ -54,6 +54,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./43_WildcardMatching/WildcardMatching.o \
 		  ./44_JumpGameII/JumpGameII.o \
 		  ./45_Permutations/Permutations.o \
+		  ./46_PermutationsII/PermutationsII.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -101,6 +102,7 @@ TESTS = helloworld_test \
 		WildcardMatching_test \
 		JumpGameII_test \
 		Permutations_test \
+		PermutationsII_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -202,6 +204,8 @@ WildcardMatching_test: ./43_WildcardMatching/WildcardMatching_test.cc ./43_Wildc
 JumpGameII_test: ./44_JumpGameII/JumpGameII_test.cc ./44_JumpGameII/JumpGameII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Permutations_test: ./45_Permutations/Permutations_test.cc ./45_Permutations/Permutations.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PermutationsII_test: ./46_PermutationsII/PermutationsII_test.cc ./46_PermutationsII/PermutationsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
