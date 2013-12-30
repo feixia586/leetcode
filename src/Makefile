@@ -52,6 +52,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./41_TrappingRainWater/TrappingRainWater.o \
 		  ./42_MultiplyStrings/MultiplyStrings.o \
 		  ./43_WildcardMatching/WildcardMatching.o \
+		  ./44_JumpGameII/JumpGameII.o \
+		  ./45_Permutations/Permutations.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -97,6 +99,8 @@ TESTS = helloworld_test \
 		TrappingRainWater_test \
 		MultiplyStrings_test \
 		WildcardMatching_test \
+		JumpGameII_test \
+		Permutations_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -194,6 +198,10 @@ TrappingRainWater_test: ./41_TrappingRainWater/TrappingRainWater_test.cc ./41_Tr
 MultiplyStrings_test: ./42_MultiplyStrings/MultiplyStrings_test.cc ./42_MultiplyStrings/MultiplyStrings.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 WildcardMatching_test: ./43_WildcardMatching/WildcardMatching_test.cc ./43_WildcardMatching/WildcardMatching.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+JumpGameII_test: ./44_JumpGameII/JumpGameII_test.cc ./44_JumpGameII/JumpGameII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+Permutations_test: ./45_Permutations/Permutations_test.cc ./45_Permutations/Permutations.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:

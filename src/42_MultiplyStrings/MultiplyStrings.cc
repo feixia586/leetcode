@@ -29,6 +29,8 @@ public:
     while (i < m+n-1 && product[i] == 0) i++;
     while (i < m+n) res.push_back('0' + product[i++]);
 
+    delete[] product;
+
     return res;
   }
 };
