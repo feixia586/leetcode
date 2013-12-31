@@ -56,6 +56,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./45_Permutations/Permutations.o \
 		  ./46_PermutationsII/PermutationsII.o \
 		  ./47_RotateImage/RotateImage.o \
+		  ./54_JumpGame/JumpGame.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -105,6 +106,7 @@ TESTS = helloworld_test \
 		Permutations_test \
 		PermutationsII_test \
 		RotateImage_test \
+		JumpGame_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -210,6 +212,8 @@ Permutations_test: ./45_Permutations/Permutations_test.cc ./45_Permutations/Perm
 PermutationsII_test: ./46_PermutationsII/PermutationsII_test.cc ./46_PermutationsII/PermutationsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RotateImage_test: ./47_RotateImage/RotateImage_test.cc ./47_RotateImage/RotateImage.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
