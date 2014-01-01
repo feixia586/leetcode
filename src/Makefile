@@ -57,6 +57,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./46_PermutationsII/PermutationsII.o \
 		  ./47_RotateImage/RotateImage.o \
 		  ./48_Anagrams/Anagrams.o \
+		  ./49_Pow_xn/Pow_xn.o \
 		  ./54_JumpGame/JumpGame.o \
 
 TESTS = helloworld_test \
@@ -108,6 +109,7 @@ TESTS = helloworld_test \
 		PermutationsII_test \
 		RotateImage_test \
 		Anagrams_test \
+		Pow_xn_test \
 		JumpGame_test \
 
 all: gtest $(OBJECTS) $(TESTS)
@@ -216,6 +218,8 @@ PermutationsII_test: ./46_PermutationsII/PermutationsII_test.cc ./46_Permutation
 RotateImage_test: ./47_RotateImage/RotateImage_test.cc ./47_RotateImage/RotateImage.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Anagrams_test: ./48_Anagrams/Anagrams_test.cc ./48_Anagrams/Anagrams.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+Pow_xn_test: ./49_Pow_xn/Pow_xn_test.cc ./49_Pow_xn/Pow_xn.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
