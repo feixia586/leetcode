@@ -59,6 +59,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./48_Anagrams/Anagrams.o \
 		  ./49_Pow_xn/Pow_xn.o \
 		  ./50_N-Queens/N-Queens.o \
+		  ./51_N-QueensII/N-QueensII.o \
 		  ./54_JumpGame/JumpGame.o \
 
 TESTS = helloworld_test \
@@ -112,6 +113,7 @@ TESTS = helloworld_test \
 		Anagrams_test \
 		Pow_xn_test \
 		N-Queens_test \
+		N-QueensII_test \
 		JumpGame_test \
 
 all: gtest $(OBJECTS) $(TESTS)
@@ -224,6 +226,8 @@ Anagrams_test: ./48_Anagrams/Anagrams_test.cc ./48_Anagrams/Anagrams.o
 Pow_xn_test: ./49_Pow_xn/Pow_xn_test.cc ./49_Pow_xn/Pow_xn.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 N-Queens_test: ./50_N-Queens/N-Queens_test.cc ./50_N-Queens/N-Queens.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+N-QueensII_test: ./51_N-QueensII/N-QueensII_test.cc ./51_N-QueensII/N-QueensII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
