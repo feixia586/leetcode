@@ -6,7 +6,7 @@
 using namespace std;
 class Solution {
 public:
-  // change the data structure to be more efficient; the algorithm is the same
+  // change the data structure(use dynamic array instead of vector and map) to be more efficient; the algorithm is the same
   // as N-Queens
   int totalNQueens(int n) {
     int *col = new int[n], *l2rDiag = new int[2*n-1], *r2lDiag = new int[2*n-1];
