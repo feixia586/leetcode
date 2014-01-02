@@ -26,6 +26,7 @@ public:
         vec.push_back(str);
       }
       res.push_back(vec);
+      return;
     }
 
     for (int j = 0; j < n; j++) {
