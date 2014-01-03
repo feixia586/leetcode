@@ -61,6 +61,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./50_N-Queens/N-Queens.o \
 		  ./51_N-QueensII/N-QueensII.o \
 		  ./52_MaximumSubarray/MaximumSubarray.o \
+		  ./53_SpiralMatrix/SpiralMatrix.o \
 		  ./54_JumpGame/JumpGame.o \
 
 TESTS = helloworld_test \
@@ -116,6 +117,7 @@ TESTS = helloworld_test \
 		N-Queens_test \
 		N-QueensII_test \
 		MaximumSubarray_test \
+		SpiralMatrix_test \
 		JumpGame_test \
 
 all: gtest $(OBJECTS) $(TESTS)
@@ -232,6 +234,8 @@ N-Queens_test: ./50_N-Queens/N-Queens_test.cc ./50_N-Queens/N-Queens.o
 N-QueensII_test: ./51_N-QueensII/N-QueensII_test.cc ./51_N-QueensII/N-QueensII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MaximumSubarray_test: ./52_MaximumSubarray/MaximumSubarray_test.cc ./52_MaximumSubarray/MaximumSubarray.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SpiralMatrix_test: ./53_SpiralMatrix/SpiralMatrix_test.cc ./53_SpiralMatrix/SpiralMatrix.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
