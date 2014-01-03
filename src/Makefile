@@ -64,6 +64,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./53_SpiralMatrix/SpiralMatrix.o \
 		  ./54_JumpGame/JumpGame.o \
 		  ./55_MergeIntervals/MergeIntervals.o \
+		  ./56_InsertInterval/InsertInterval.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -121,6 +122,7 @@ TESTS = helloworld_test \
 		SpiralMatrix_test \
 		JumpGame_test \
 		MergeIntervals_test \
+		InsertInterval_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -242,6 +244,8 @@ SpiralMatrix_test: ./53_SpiralMatrix/SpiralMatrix_test.cc ./53_SpiralMatrix/Spir
 JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeIntervals_test: ./55_MergeIntervals/MergeIntervals_test.cc ./55_MergeIntervals/MergeIntervals.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+InsertInterval_test: ./56_InsertInterval/InsertInterval_test.cc ./56_InsertInterval/InsertInterval.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
