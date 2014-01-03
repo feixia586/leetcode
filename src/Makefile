@@ -63,6 +63,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./52_MaximumSubarray/MaximumSubarray.o \
 		  ./53_SpiralMatrix/SpiralMatrix.o \
 		  ./54_JumpGame/JumpGame.o \
+		  ./55_MergeIntervals/MergeIntervals.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -119,6 +120,7 @@ TESTS = helloworld_test \
 		MaximumSubarray_test \
 		SpiralMatrix_test \
 		JumpGame_test \
+		MergeIntervals_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -238,6 +240,8 @@ MaximumSubarray_test: ./52_MaximumSubarray/MaximumSubarray_test.cc ./52_MaximumS
 SpiralMatrix_test: ./53_SpiralMatrix/SpiralMatrix_test.cc ./53_SpiralMatrix/SpiralMatrix.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MergeIntervals_test: ./55_MergeIntervals/MergeIntervals_test.cc ./55_MergeIntervals/MergeIntervals.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
