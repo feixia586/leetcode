@@ -66,6 +66,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./55_MergeIntervals/MergeIntervals.o \
 		  ./56_InsertInterval/InsertInterval.o \
 		  ./57_LengthOfLastWord/LengthOfLastWord.o \
+		  ./58_SpiralMatrixII/SpiralMatrixII.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -125,6 +126,7 @@ TESTS = helloworld_test \
 		MergeIntervals_test \
 		InsertInterval_test \
 		LengthOfLastWord_test \
+		SpiralMatrixII_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -250,6 +252,8 @@ MergeIntervals_test: ./55_MergeIntervals/MergeIntervals_test.cc ./55_MergeInterv
 InsertInterval_test: ./56_InsertInterval/InsertInterval_test.cc ./56_InsertInterval/InsertInterval.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LengthOfLastWord_test: ./57_LengthOfLastWord/LengthOfLastWord_test.cc ./57_LengthOfLastWord/LengthOfLastWord.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SpiralMatrixII_test: ./58_SpiralMatrixII/SpiralMatrixII_test.cc ./58_SpiralMatrixII/SpiralMatrixII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
