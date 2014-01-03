@@ -65,6 +65,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./54_JumpGame/JumpGame.o \
 		  ./55_MergeIntervals/MergeIntervals.o \
 		  ./56_InsertInterval/InsertInterval.o \
+		  ./57_LengthOfLastWord/LengthOfLastWord.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -123,6 +124,7 @@ TESTS = helloworld_test \
 		JumpGame_test \
 		MergeIntervals_test \
 		InsertInterval_test \
+		LengthOfLastWord_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -246,6 +248,8 @@ JumpGame_test: ./54_JumpGame/JumpGame_test.cc ./54_JumpGame/JumpGame.o
 MergeIntervals_test: ./55_MergeIntervals/MergeIntervals_test.cc ./55_MergeIntervals/MergeIntervals.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 InsertInterval_test: ./56_InsertInterval/InsertInterval_test.cc ./56_InsertInterval/InsertInterval.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LengthOfLastWord_test: ./57_LengthOfLastWord/LengthOfLastWord_test.cc ./57_LengthOfLastWord/LengthOfLastWord.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
