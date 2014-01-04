@@ -67,6 +67,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./56_InsertInterval/InsertInterval.o \
 		  ./57_LengthOfLastWord/LengthOfLastWord.o \
 		  ./58_SpiralMatrixII/SpiralMatrixII.o \
+		  ./59_PermutationSequence/PermutationSequence.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -127,6 +128,7 @@ TESTS = helloworld_test \
 		InsertInterval_test \
 		LengthOfLastWord_test \
 		SpiralMatrixII_test \
+		PermutationSequence_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -254,6 +256,8 @@ InsertInterval_test: ./56_InsertInterval/InsertInterval_test.cc ./56_InsertInter
 LengthOfLastWord_test: ./57_LengthOfLastWord/LengthOfLastWord_test.cc ./57_LengthOfLastWord/LengthOfLastWord.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SpiralMatrixII_test: ./58_SpiralMatrixII/SpiralMatrixII_test.cc ./58_SpiralMatrixII/SpiralMatrixII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PermutationSequence_test: ./59_PermutationSequence/PermutationSequence_test.cc ./59_PermutationSequence/PermutationSequence.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
