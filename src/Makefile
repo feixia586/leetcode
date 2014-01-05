@@ -70,6 +70,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./59_PermutationSequence/PermutationSequence.o \
 		  ./60_RotateList/RotateList.o \
 		  ./61_UniquePaths/UniquePaths.o \
+		  ./62_UniquePaths/UniquePathsII.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -133,6 +134,7 @@ TESTS = helloworld_test \
 		PermutationSequence_test \
 		RotateList_test \
 		UniquePaths_test \
+		UniquePathsII_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -266,6 +268,8 @@ PermutationSequence_test: ./59_PermutationSequence/PermutationSequence_test.cc .
 RotateList_test: ./60_RotateList/RotateList_test.cc ./60_RotateList/RotateList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 UniquePaths_test: ./61_UniquePaths/UniquePaths_test.cc ./61_UniquePaths/UniquePaths.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+UniquePathsII_test: ./62_UniquePaths/UniquePathsII_test.cc ./62_UniquePaths/UniquePathsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
