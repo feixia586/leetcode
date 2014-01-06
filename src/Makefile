@@ -70,7 +70,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./59_PermutationSequence/PermutationSequence.o \
 		  ./60_RotateList/RotateList.o \
 		  ./61_UniquePaths/UniquePaths.o \
-		  ./62_UniquePaths/UniquePathsII.o \
+		  ./62_UniquePathsII/UniquePathsII.o \
+		  ./63_MinimumPathSum/MinimumPathSum.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -135,6 +136,7 @@ TESTS = helloworld_test \
 		RotateList_test \
 		UniquePaths_test \
 		UniquePathsII_test \
+		MinimumPathSum_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -269,7 +271,9 @@ RotateList_test: ./60_RotateList/RotateList_test.cc ./60_RotateList/RotateList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 UniquePaths_test: ./61_UniquePaths/UniquePaths_test.cc ./61_UniquePaths/UniquePaths.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
-UniquePathsII_test: ./62_UniquePaths/UniquePathsII_test.cc ./62_UniquePaths/UniquePathsII.o
+UniquePathsII_test: ./62_UniquePathsII/UniquePathsII_test.cc ./62_UniquePathsII/UniquePathsII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MinimumPathSum_test: ./63_MinimumPathSum/MinimumPathSum_test.cc ./63_MinimumPathSum/MinimumPathSum.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
