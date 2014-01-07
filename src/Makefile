@@ -72,6 +72,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./61_UniquePaths/UniquePaths.o \
 		  ./62_UniquePathsII/UniquePathsII.o \
 		  ./63_MinimumPathSum/MinimumPathSum.o \
+		  ./64_MergeTwoSortedLists/MergeTwoSortedLists.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -137,6 +138,7 @@ TESTS = helloworld_test \
 		UniquePaths_test \
 		UniquePathsII_test \
 		MinimumPathSum_test \
+		MergeTwoSortedLists_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -274,6 +276,8 @@ UniquePaths_test: ./61_UniquePaths/UniquePaths_test.cc ./61_UniquePaths/UniquePa
 UniquePathsII_test: ./62_UniquePathsII/UniquePathsII_test.cc ./62_UniquePathsII/UniquePathsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MinimumPathSum_test: ./63_MinimumPathSum/MinimumPathSum_test.cc ./63_MinimumPathSum/MinimumPathSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MergeTwoSortedLists_test: ./64_MergeTwoSortedLists/MergeTwoSortedLists_test.cc ./64_MergeTwoSortedLists/MergeTwoSortedLists.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
