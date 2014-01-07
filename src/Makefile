@@ -74,6 +74,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./63_MinimumPathSum/MinimumPathSum.o \
 		  ./64_MergeTwoSortedLists/MergeTwoSortedLists.o \
 		  ./65_AddBinary/AddBinary.o \
+		  ./66_ValidNumber/ValidNumber.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -141,6 +142,7 @@ TESTS = helloworld_test \
 		MinimumPathSum_test \
 		MergeTwoSortedLists_test \
 		AddBinary_test \
+		ValidNumber_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -282,6 +284,8 @@ MinimumPathSum_test: ./63_MinimumPathSum/MinimumPathSum_test.cc ./63_MinimumPath
 MergeTwoSortedLists_test: ./64_MergeTwoSortedLists/MergeTwoSortedLists_test.cc ./64_MergeTwoSortedLists/MergeTwoSortedLists.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 AddBinary_test: ./65_AddBinary/AddBinary_test.cc ./65_AddBinary/AddBinary.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ValidNumber_test: ./66_ValidNumber/ValidNumber_test.cc ./66_ValidNumber/ValidNumber.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
