@@ -1,4 +1,4 @@
-CC = $(CXX)
+CC = g++
 
 OPT = -O0 -ggdb
 WARN = -Wall -Wno-unused-function -finline-functions
@@ -75,6 +75,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./64_MergeTwoSortedLists/MergeTwoSortedLists.o \
 		  ./65_AddBinary/AddBinary.o \
 		  ./66_ValidNumber/ValidNumber.o \
+		  ./67_PlusOne/PlusOne.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -143,6 +144,7 @@ TESTS = helloworld_test \
 		MergeTwoSortedLists_test \
 		AddBinary_test \
 		ValidNumber_test \
+		PlusOne_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -286,6 +288,8 @@ MergeTwoSortedLists_test: ./64_MergeTwoSortedLists/MergeTwoSortedLists_test.cc .
 AddBinary_test: ./65_AddBinary/AddBinary_test.cc ./65_AddBinary/AddBinary.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ValidNumber_test: ./66_ValidNumber/ValidNumber_test.cc ./66_ValidNumber/ValidNumber.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PlusOne_test: ./67_PlusOne/PlusOne_test.cc ./67_PlusOne/PlusOne.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
