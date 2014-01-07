@@ -78,6 +78,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./67_PlusOne/PlusOne.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
+		  ./70_ClimbingStairs/ClimbingStairs.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -149,6 +150,7 @@ TESTS = helloworld_test \
 		PlusOne_test \
 		TextJustification_test \
 		Sqrt_x_test \
+		ClimbingStairs_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -298,6 +300,8 @@ PlusOne_test: ./67_PlusOne/PlusOne_test.cc ./67_PlusOne/PlusOne.o
 TextJustification_test: ./68_TextJustification/TextJustification_test.cc ./68_TextJustification/TextJustification.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
