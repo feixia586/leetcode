@@ -76,6 +76,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./65_AddBinary/AddBinary.o \
 		  ./66_ValidNumber/ValidNumber.o \
 		  ./67_PlusOne/PlusOne.o \
+		  ./68_TextJustification/TextJustification.o \
+		  ./69_Sqrt_x/Sqrt_x.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -145,6 +147,8 @@ TESTS = helloworld_test \
 		AddBinary_test \
 		ValidNumber_test \
 		PlusOne_test \
+		TextJustification_test \
+		Sqrt_x_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -290,6 +294,10 @@ AddBinary_test: ./65_AddBinary/AddBinary_test.cc ./65_AddBinary/AddBinary.o
 ValidNumber_test: ./66_ValidNumber/ValidNumber_test.cc ./66_ValidNumber/ValidNumber.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PlusOne_test: ./67_PlusOne/PlusOne_test.cc ./67_PlusOne/PlusOne.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+TextJustification_test: ./68_TextJustification/TextJustification_test.cc ./68_TextJustification/TextJustification.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
