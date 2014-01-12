@@ -79,8 +79,9 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
-		  ./InsertionSortList/InsertionSortList.o \
-		  ./SortList/SortList.o \
+		  ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal.o \
+		  ./147_InsertionSortList/InsertionSortList.o \
+		  ./148_SortList/SortList.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -153,6 +154,7 @@ TESTS = helloworld_test \
 		TextJustification_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
+		BinaryTreePreorderTraversal_test \
 		InsertionSortList_test \
 		SortList_test \
 
@@ -307,9 +309,11 @@ Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
-InsertionSortList_test: ./InsertionSortList/InsertionSortList_test.cc ./InsertionSortList/InsertionSortList.o
+BinaryTreePreorderTraversal_test: ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal_test.cc ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
-SortList_test: ./SortList/SortList_test.cc ./SortList/SortList.o
+InsertionSortList_test: ./147_InsertionSortList/InsertionSortList_test.cc ./147_InsertionSortList/InsertionSortList.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SortList_test: ./148_SortList/SortList_test.cc ./148_SortList/SortList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
