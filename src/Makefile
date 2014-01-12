@@ -79,6 +79,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
+		  ./SortList/SortList.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -151,6 +152,7 @@ TESTS = helloworld_test \
 		TextJustification_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
+		SortList_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -302,6 +304,8 @@ TextJustification_test: ./68_TextJustification/TextJustification_test.cc ./68_Te
 Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SortList_test: ./SortList/SortList_test.cc ./SortList/SortList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
