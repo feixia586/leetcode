@@ -80,6 +80,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
+		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./143_ReorderList/ReorderList.o \
 		  ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal.o \
 		  ./145_BinaryTreePostorderTraversal/BinaryTreePostorderTraversal.o \
@@ -158,6 +159,7 @@ TESTS = helloworld_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
 		ReverseLinkedListII_test \
+		LinkedListCycle_test \
 		ReorderList_test \
 		BinaryTreePreorderTraversal_test \
 		BinaryTreePostorderTraversal_test \
@@ -316,6 +318,8 @@ Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReverseLinkedListII_test: ./92_ReverseLinkedListII/ReverseLinkedListII_test.cc ./92_ReverseLinkedListII/ReverseLinkedListII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LinkedListCycle_test: ./141_LinkedListCycle/LinkedListCycle_test.cc ./141_LinkedListCycle/LinkedListCycle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReorderList_test: ./143_ReorderList/ReorderList_test.cc ./143_ReorderList/ReorderList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
