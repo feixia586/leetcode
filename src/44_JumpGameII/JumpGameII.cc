@@ -20,7 +20,7 @@ public:
     int minstep = 0, ms_maxdis = 0, cur_maxdis = 0;
 
     for (int i = 0; i < n; i++) {
-      // Actually, it is better to use i == ms_maxdis here
+      // Actually, it is better to use i == ms_maxdis+1 here
       if (i > ms_maxdis) {
         minstep++;
         ms_maxdis = cur_maxdis;

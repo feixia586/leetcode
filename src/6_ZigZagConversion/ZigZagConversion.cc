@@ -52,6 +52,8 @@ public:
       res_str += str_arr[i];
     }
 
+    delete []str_arr;
+
     return res_str;
   }
 };

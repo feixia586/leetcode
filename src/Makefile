@@ -80,6 +80,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
+		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
@@ -161,6 +162,7 @@ TESTS = helloworld_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
 		ReverseLinkedListII_test \
+		UniqueBinarySearchTrees_test \
 		BinaryTreeLevelOrderTraversal_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
@@ -322,6 +324,8 @@ Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReverseLinkedListII_test: ./92_ReverseLinkedListII/ReverseLinkedListII_test.cc ./92_ReverseLinkedListII/ReverseLinkedListII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+UniqueBinarySearchTrees_test: ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees_test.cc ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversal_test: ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal_test.cc ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@

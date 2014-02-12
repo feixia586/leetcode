@@ -11,7 +11,7 @@ public:
     return sortAndsolve(num);
   }
   /************************************************************
-   * Sort first Method (Recommended). Time O(n^2)
+   * Sort first Method (Recommended). Time O(n^2). Need to optimize lookup O(1)
    ************************************************************/
   vector<vector<int> > sortAndsolve(vector<int>& num) {
     sort(num.begin(), num.end());
