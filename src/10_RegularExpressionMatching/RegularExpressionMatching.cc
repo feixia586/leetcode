@@ -7,8 +7,8 @@ public:
     // if the next character is not '*'
     if (*(p+1) != '*') {
       // note that we need to make sure (*s ! = 0)
-      bool cond1 = (*s == *p || *p == '.') && (*s != 0);
-      bool cond2 = isMatch(s+1, p+1);
+      bool cond1 = (*s == *p || *p == '.');
+      bool cond2 = (*s != 0) && isMatch(s+1, p+1);
       return cond1 && cond2;
     }
 
