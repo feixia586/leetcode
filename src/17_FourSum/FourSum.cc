@@ -6,6 +6,7 @@ using namespace std;
 
 class Solution {
 public:
+  // need to optimize the lookup time to O(1)
   vector<vector<int> > fourSum(vector<int> &num, int target) {
     sort(num.begin(), num.end());
 
@@ -31,7 +32,7 @@ public:
               res.push_back(tmp);
               s.insert(tmp);
             }
-            if(num[p] == num[p+1])
+            if(num[p] == num[p+1]) // it seems that this part is not necessary
               p++;
             else if(num[q] == num[q-1])
               q--;

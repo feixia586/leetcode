@@ -54,7 +54,7 @@ public:
     string res_str = "";
     int res_len = 0;
     int res_begin = 0;
-    bool table[1000][1000] = { false }; // Assume s.length() <= 1000
+    bool table[1000][1000] = { {false} }; // Assume s.length() <= 1000
 
     for (int i = 0; i < len; i++) {
       table[i][i] = true;

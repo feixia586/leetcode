@@ -11,15 +11,18 @@ public:
     return sortAndsolve(num);
   }
   /************************************************************
-   * Sort first Method (Recommended). Time O(n^2)
+   * Sort first Method (Recommended). Time O(n^2). Need to optimize lookup O(1)
    ************************************************************/
   vector<vector<int> > sortAndsolve(vector<int>& num) {
     sort(num.begin(), num.end());
 
     vector<vector<int> > res;
-    set<vector<int> > s;
+//    set<vector<int> > s;
     int len = num.size();
     for (int low = 0; low < len-2; low++) {
+      // skip duplicates
+      if (low > 0 && num[low] == num[low-1]) continue;
+
       int high = len - 1;
       int p = low + 1;
       while(p < high) {
@@ -33,16 +36,10 @@ public:
           tmp.push_back(num[low]);
           tmp.push_back(num[p]);
           tmp.push_back(num[high]);
-          if (s.find(tmp) == s.end()) {
-            res.push_back(tmp);
-            s.insert(tmp);
-          }
-          if (num[p] == num[p+1])
-            p++;
-          else if (num[high] == num[high-1])
-            high--;
-          else
-            p++; // or high--;
+          res.push_back(tmp);
+          // skip duplicates
+          do { p++; } while(p < high && num[p] == num[p-1]);
+          do { high--; } while(p < high && num[high] == num[high+1]);
         }
       }
     }

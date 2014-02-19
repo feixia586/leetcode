@@ -1,8 +1,22 @@
 class Solution {
 public:
-  // Time O(m+n); Space O(m+n)
-  // Idea: do merge sorting first, then calculate the median
   double findMedianSortedArrays(int A[], int m, int B[], int n) {
+    return naive_method(A, m, B, n);
+  }
+
+  /****************************************************************************
+   * O(k) method. Here k = (m + n) / 2
+   ****************************************************************************/
+
+  /****************************************************************************
+   * O(lgm + lgn) method.
+   ****************************************************************************/
+
+  /****************************************************************************
+   * Naive Method. Time O(m+n); Space O(m+n)
+   * Idea: do merge sorting first, then calculate the median
+   ****************************************************************************/
+  double naive_method(int A[], int m, int B[], int n) {
     int size = m + n;
     int mid = size / 2;
     int* all = new int[size];
