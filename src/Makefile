@@ -79,6 +79,8 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
+		  ./78_Subsets/Subsets_test.o \
+		  ./91_SubsetsII/SubsetsII_test.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
@@ -162,6 +164,8 @@ TESTS = helloworld_test \
 		TextJustification_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
+		Subsets_test \
+		SubsetsII_test \
 		ReverseLinkedListII_test \
 		UniqueBinarySearchTrees_test \
 		UniqueBinarySearchTreesII_test \
@@ -324,6 +328,10 @@ TextJustification_test: ./68_TextJustification/TextJustification_test.cc ./68_Te
 Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+Subsets_test: ./78_Subsets/Subsets_test.cc ./78_Subsets/Subsets.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReverseLinkedListII_test: ./92_ReverseLinkedListII/ReverseLinkedListII_test.cc ./92_ReverseLinkedListII/ReverseLinkedListII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
