@@ -79,8 +79,10 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
-		  ./78_Subsets/Subsets_test.o \
-		  ./91_SubsetsII/SubsetsII_test.o \
+		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
+		  ./78_Subsets/Subsets.o \
+		  ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o \
+		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
@@ -164,7 +166,9 @@ TESTS = helloworld_test \
 		TextJustification_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
+		SearchA2DMatrix_test \
 		Subsets_test \
+		SearchInRotatedSortedArrayII_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
 		UniqueBinarySearchTrees_test \
@@ -329,7 +333,11 @@ Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SearchA2DMatrix_test: ./74_SearchA2DMatrix/SearchA2DMatrix_test.cc ./74_SearchA2DMatrix/SearchA2DMatrix.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Subsets_test: ./78_Subsets/Subsets_test.cc ./78_Subsets/Subsets.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SearchInRotatedSortedArrayII_test: ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII_test.cc ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
