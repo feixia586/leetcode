@@ -81,7 +81,9 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
 		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
 		  ./78_Subsets/Subsets.o \
+		  ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o \
 		  ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o \
+		  ./88_MergeSortedArray/MergeSortedArray.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
@@ -168,7 +170,9 @@ TESTS = helloworld_test \
 		ClimbingStairs_test \
 		SearchA2DMatrix_test \
 		Subsets_test \
+		RemoveDuplicatesFromSortedArrayII_test \
 		SearchInRotatedSortedArrayII_test \
+		MergeSortedArray_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
 		UniqueBinarySearchTrees_test \
@@ -337,7 +341,11 @@ SearchA2DMatrix_test: ./74_SearchA2DMatrix/SearchA2DMatrix_test.cc ./74_SearchA2
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Subsets_test: ./78_Subsets/Subsets_test.cc ./78_Subsets/Subsets.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RemoveDuplicatesFromSortedArrayII_test: ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII_test.cc ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SearchInRotatedSortedArrayII_test: ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII_test.cc ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MergeSortedArray_test: ./88_MergeSortedArray/MergeSortedArray_test.cc ./88_MergeSortedArray/MergeSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
