@@ -15,11 +15,16 @@ struct TreeNode {
 class Solution {
 public:
   vector<int> postorderTraversal(TreeNode *root) {
-    // vector<int> res;
+    vector<int> res;
+    if (root == NULL) return res;
+
     // recr_postorder(root, res);
     // return res;
 
-    return iter_postorder(root);
+    iter_postorder_A(root, res);
+    return res;
+
+    //return iter_postorder(root);
   }
 
   /***********************************************************************
@@ -33,7 +38,33 @@ public:
   }
 
   /***********************************************************************
-   * Iterative Method
+   * Iterative Method -- recommended
+   ***********************************************************************/
+  void iter_postorder_A(TreeNode *root, vector<int> &res) {
+    if (root == NULL) {
+      return;
+    }
+
+    stack<TreeNode *> stk;
+    TreeNode *pre = NULL;
+    stk.push(root);
+    while (!stk.empty()) {
+      TreeNode *crnt = stk.top();
+      // if no children or children are visited
+      if ((crnt->left == NULL && crnt->right == NULL) ||
+          (pre != NULL && (pre == crnt->left || pre == crnt->right))) {
+        res.push_back(crnt->val);
+        stk.pop();
+        pre = crnt;
+      } else {
+        if (crnt->right) stk.push(crnt->right);
+        if (crnt->left) stk.push(crnt->left);
+      }
+    }
+  }
+
+  /***********************************************************************
+   * Iterative Method -- not recommended
    ***********************************************************************/
   vector<int> iter_postorder(TreeNode *root) {
     vector<int> res;
