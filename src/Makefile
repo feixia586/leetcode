@@ -92,6 +92,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
 		  ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
+		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
 		  ./143_ReorderList/ReorderList.o \
@@ -184,6 +185,7 @@ TESTS = helloworld_test \
 		BinaryTreeLevelOrderTraversal_test \
 		MaximumDepthOfBinaryTree_test \
 		BalancedBinaryTree_test \
+		MinimumDepthOfBinaryTree_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
 		ReorderList_test \
@@ -368,6 +370,8 @@ BinaryTreeLevelOrderTraversal_test: ./102_BinaryTreeLevelOrderTraversal/BinaryTr
 MaximumDepthOfBinaryTree_test: ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree_test.cc ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./110_BalancedBinaryTree/BalancedBinaryTree.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree_test.cc ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LinkedListCycle_test: ./141_LinkedListCycle/LinkedListCycle_test.cc ./141_LinkedListCycle/LinkedListCycle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
