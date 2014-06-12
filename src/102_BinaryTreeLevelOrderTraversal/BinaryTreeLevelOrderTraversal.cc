@@ -15,6 +15,44 @@ struct TreeNode {
 class Solution {
 public:
   vector<vector<int> > levelOrder(TreeNode *root) {
+    return levelOrder_M1(root);
+  }
+
+  /***********************************************************
+   * Method 1 -- recommended
+   ***********************************************************/
+  vector<vector<int> > levelOrder_M1(TreeNode *root) {
+    vector<vector<int> > res;
+    if (root == NULL) {
+      return res;
+    }
+
+    queue<TreeNode *> que;
+    que.push(root);
+    while (!que.empty()) {
+      int size = que.size();
+      vector<int> vec;
+      for (int i = 0; i < size; i++) {
+        TreeNode *node = que.front();
+        vec.push_back(node->val);
+        que.pop();
+        if (node->left) {
+          que.push(node->left);
+        }
+        if (node->right) {
+          que.push(node->right);
+        }
+      }
+      res.push_back(vec);
+    }
+
+    return res;
+  }
+
+  /***********************************************************
+   * Method 2
+   ***********************************************************/
+  vector<vector<int> > levelOrder_M2(TreeNode *root) {
     vector<vector<int> > res;
     vector<int> level_vec;
     if (root == NULL) return res;
@@ -44,5 +82,4 @@ public:
     }
     return res;
   }
-
 };
