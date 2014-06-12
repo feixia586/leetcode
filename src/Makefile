@@ -86,9 +86,11 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
+		  ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
+		  ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
 		  ./143_ReorderList/ReorderList.o \
@@ -175,9 +177,11 @@ TESTS = helloworld_test \
 		MergeSortedArray_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
+		BinaryTreeInorderTraversal_test \
 		UniqueBinarySearchTrees_test \
 		UniqueBinarySearchTreesII_test \
 		BinaryTreeLevelOrderTraversal_test \
+		MaximumDepthOfBinaryTree_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
 		ReorderList_test \
@@ -351,11 +355,15 @@ SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReverseLinkedListII_test: ./92_ReverseLinkedListII/ReverseLinkedListII_test.cc ./92_ReverseLinkedListII/ReverseLinkedListII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+BinaryTreeInorderTraversal_test: ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal_test.cc ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 UniqueBinarySearchTrees_test: ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees_test.cc ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 UniqueBinarySearchTreesII_test: ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII_test.cc ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversal_test: ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal_test.cc ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MaximumDepthOfBinaryTree_test: ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree_test.cc ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LinkedListCycle_test: ./141_LinkedListCycle/LinkedListCycle_test.cc ./141_LinkedListCycle/LinkedListCycle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
