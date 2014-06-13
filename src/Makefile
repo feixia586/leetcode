@@ -94,6 +94,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./103_BinaryTreeZigzagLevelOrderTraversal/BinaryTreeZigzagLevelOrderTraversal.o \
 		  ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o \
 		  ./105_ConstructBinaryTreeFromPreorderAndInorderTraversal/ConstructBinaryTreeFromPreorderAndInorderTraversal.o \
+		  ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal.o \
 		  ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
@@ -192,6 +193,7 @@ TESTS = helloworld_test \
 		BinaryTreeZigzagLevelOrderTraversal_test \
 		MaximumDepthOfBinaryTree_test \
 		ConstructBinaryTreeFromPreorderAndInorderTraversal_test \
+		ConstructBinaryTreeFromInorderAndPostorderTraversal_test \
 		BinaryTreeLevelOrderTraversalII_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
@@ -384,6 +386,8 @@ BinaryTreeZigzagLevelOrderTraversal_test: ./103_BinaryTreeZigzagLevelOrderTraver
 MaximumDepthOfBinaryTree_test: ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree_test.cc ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ConstructBinaryTreeFromPreorderAndInorderTraversal_test: ./105_ConstructBinaryTreeFromPreorderAndInorderTraversal/ConstructBinaryTreeFromPreorderAndInorderTraversal_test.cc ./105_ConstructBinaryTreeFromPreorderAndInorderTraversal/ConstructBinaryTreeFromPreorderAndInorderTraversal.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ConstructBinaryTreeFromInorderAndPostorderTraversal_test: ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal_test.cc ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversalII_test: ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII_test.cc ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
