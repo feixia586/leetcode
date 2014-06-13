@@ -90,7 +90,9 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
+		  ./103_BinaryTreeZigzagLevelOrderTraversal/BinaryTreeZigzagLevelOrderTraversal.o \
 		  ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o \
+		  ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
@@ -184,7 +186,9 @@ TESTS = helloworld_test \
 		UniqueBinarySearchTrees_test \
 		UniqueBinarySearchTreesII_test \
 		BinaryTreeLevelOrderTraversal_test \
+		BinaryTreeZigzagLevelOrderTraversal_test \
 		MaximumDepthOfBinaryTree_test \
+		BinaryTreeLevelOrderTraversalII_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
 		BinaryTreeMaximumPathSum_test \
@@ -369,7 +373,11 @@ UniqueBinarySearchTreesII_test: ./96_UniqueBinarySearchTreesII/UniqueBinarySearc
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversal_test: ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal_test.cc ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+BinaryTreeZigzagLevelOrderTraversal_test: ./103_BinaryTreeZigzagLevelOrderTraversal/BinaryTreeZigzagLevelOrderTraversal_test.cc ./103_BinaryTreeZigzagLevelOrderTraversal/BinaryTreeZigzagLevelOrderTraversal.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MaximumDepthOfBinaryTree_test: ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree_test.cc ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+BinaryTreeLevelOrderTraversalII_test: ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII_test.cc ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./110_BalancedBinaryTree/BalancedBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
