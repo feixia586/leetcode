@@ -89,6 +89,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
+		  ./98_ValidateBinarySearchTree/ValidateBinarySearchTree.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
 		  ./103_BinaryTreeZigzagLevelOrderTraversal/BinaryTreeZigzagLevelOrderTraversal.o \
 		  ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o \
@@ -185,6 +186,7 @@ TESTS = helloworld_test \
 		BinaryTreeInorderTraversal_test \
 		UniqueBinarySearchTrees_test \
 		UniqueBinarySearchTreesII_test \
+		ValidateBinarySearchTree_test \
 		BinaryTreeLevelOrderTraversal_test \
 		BinaryTreeZigzagLevelOrderTraversal_test \
 		MaximumDepthOfBinaryTree_test \
@@ -370,6 +372,8 @@ BinaryTreeInorderTraversal_test: ./94_BinaryTreeInorderTraversal/BinaryTreeInord
 UniqueBinarySearchTrees_test: ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees_test.cc ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 UniqueBinarySearchTreesII_test: ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII_test.cc ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ValidateBinarySearchTree_test: ./98_ValidateBinarySearchTree/ValidateBinarySearchTree_test.cc ./98_ValidateBinarySearchTree/ValidateBinarySearchTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversal_test: ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal_test.cc ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
