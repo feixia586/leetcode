@@ -97,6 +97,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./105_ConstructBinaryTreeFromPreorderAndInorderTraversal/ConstructBinaryTreeFromPreorderAndInorderTraversal.o \
 		  ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal.o \
 		  ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o \
+		  ./108_ConvertSortedArrayToBinarySearchTree/ConvertSortedArrayToBinarySearchTree.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
@@ -197,6 +198,7 @@ TESTS = helloworld_test \
 		ConstructBinaryTreeFromPreorderAndInorderTraversal_test \
 		ConstructBinaryTreeFromInorderAndPostorderTraversal_test \
 		BinaryTreeLevelOrderTraversalII_test \
+		ConvertSortedArrayToBinarySearchTree_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
 		BinaryTreeMaximumPathSum_test \
@@ -394,6 +396,8 @@ ConstructBinaryTreeFromPreorderAndInorderTraversal_test: ./105_ConstructBinaryTr
 ConstructBinaryTreeFromInorderAndPostorderTraversal_test: ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal_test.cc ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversalII_test: ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII_test.cc ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ConvertSortedArrayToBinarySearchTree_test: ./108_ConvertSortedArrayToBinarySearchTree/ConvertSortedArrayToBinarySearchTree_test.cc ./108_ConvertSortedArrayToBinarySearchTree/ConvertSortedArrayToBinarySearchTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./110_BalancedBinaryTree/BalancedBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
