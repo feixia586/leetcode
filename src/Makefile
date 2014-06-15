@@ -83,6 +83,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./78_Subsets/Subsets.o \
 		  ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o \
 		  ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o \
+		  ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
@@ -98,6 +99,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./106_ConstructBinaryTreeFromInorderAndPostorderTraversal/ConstructBinaryTreeFromInorderAndPostorderTraversal.o \
 		  ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o \
 		  ./108_ConvertSortedArrayToBinarySearchTree/ConvertSortedArrayToBinarySearchTree.o \
+		  ./109_ConvertSortedListToBinarySearchTree/ConvertSortedListToBinarySearchTree.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
@@ -184,6 +186,7 @@ TESTS = helloworld_test \
 		Subsets_test \
 		RemoveDuplicatesFromSortedArrayII_test \
 		SearchInRotatedSortedArrayII_test \
+		RemoveDuplicatesFromSortedList_test \
 		MergeSortedArray_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
@@ -199,6 +202,7 @@ TESTS = helloworld_test \
 		ConstructBinaryTreeFromInorderAndPostorderTraversal_test \
 		BinaryTreeLevelOrderTraversalII_test \
 		ConvertSortedArrayToBinarySearchTree_test \
+		ConvertSortedListToBinarySearchTree_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
 		BinaryTreeMaximumPathSum_test \
@@ -369,6 +373,8 @@ RemoveDuplicatesFromSortedArrayII_test: ./80_RemoveDuplicatesFromSortedArrayII/R
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SearchInRotatedSortedArrayII_test: ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII_test.cc ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RemoveDuplicatesFromSortedList_test: ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList_test.cc ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeSortedArray_test: ./88_MergeSortedArray/MergeSortedArray_test.cc ./88_MergeSortedArray/MergeSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
@@ -398,6 +404,8 @@ ConstructBinaryTreeFromInorderAndPostorderTraversal_test: ./106_ConstructBinaryT
 BinaryTreeLevelOrderTraversalII_test: ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII_test.cc ./107_BinaryTreeLevelOrderTraversalII/BinaryTreeLevelOrderTraversalII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ConvertSortedArrayToBinarySearchTree_test: ./108_ConvertSortedArrayToBinarySearchTree/ConvertSortedArrayToBinarySearchTree_test.cc ./108_ConvertSortedArrayToBinarySearchTree/ConvertSortedArrayToBinarySearchTree.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ConvertSortedListToBinarySearchTree_test: ./109_ConvertSortedListToBinarySearchTree/ConvertSortedListToBinarySearchTree_test.cc ./109_ConvertSortedListToBinarySearchTree/ConvertSortedListToBinarySearchTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./110_BalancedBinaryTree/BalancedBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
