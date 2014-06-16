@@ -85,6 +85,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o \
 		  ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o \
 		  ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o \
+		  ./86_PartitionList/PartitionList.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
@@ -189,6 +190,7 @@ TESTS = helloworld_test \
 		SearchInRotatedSortedArrayII_test \
 		RemoveDuplicatesFromSortedList_test \
 		RemoveDuplicatesFromSortedListII_test \
+		PartitionList_test \
 		MergeSortedArray_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
@@ -378,6 +380,8 @@ SearchInRotatedSortedArrayII_test: ./81_SearchInRotatedSortedArrayII/SearchInRot
 RemoveDuplicatesFromSortedList_test: ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList_test.cc ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RemoveDuplicatesFromSortedListII_test: ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII_test.cc ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PartitionList_test: ./86_PartitionList/PartitionList_test.cc ./86_PartitionList/PartitionList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeSortedArray_test: ./88_MergeSortedArray/MergeSortedArray_test.cc ./88_MergeSortedArray/MergeSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
