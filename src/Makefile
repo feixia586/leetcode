@@ -84,6 +84,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o \
 		  ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o \
 		  ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o \
+		  ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
@@ -187,6 +188,7 @@ TESTS = helloworld_test \
 		RemoveDuplicatesFromSortedArrayII_test \
 		SearchInRotatedSortedArrayII_test \
 		RemoveDuplicatesFromSortedList_test \
+		RemoveDuplicatesFromSortedListII_test \
 		MergeSortedArray_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
@@ -374,6 +376,8 @@ RemoveDuplicatesFromSortedArrayII_test: ./80_RemoveDuplicatesFromSortedArrayII/R
 SearchInRotatedSortedArrayII_test: ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII_test.cc ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RemoveDuplicatesFromSortedList_test: ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList_test.cc ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RemoveDuplicatesFromSortedListII_test: ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII_test.cc ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeSortedArray_test: ./88_MergeSortedArray/MergeSortedArray_test.cc ./88_MergeSortedArray/MergeSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
