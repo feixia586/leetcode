@@ -105,6 +105,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
+		  ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
 		  ./143_ReorderList/ReorderList.o \
@@ -210,6 +211,7 @@ TESTS = helloworld_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
 		BinaryTreeMaximumPathSum_test \
+		CopyListWithRandomPointer_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
 		ReorderList_test \
@@ -420,6 +422,8 @@ BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./1
 MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree_test.cc ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeMaximumPathSum_test: ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum_test.cc ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+CopyListWithRandomPointer_test: ./138_CopyListWithRandomPointer/CopyListWithRandomPointer_test.cc ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LinkedListCycle_test: ./141_LinkedListCycle/LinkedListCycle_test.cc ./141_LinkedListCycle/LinkedListCycle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
