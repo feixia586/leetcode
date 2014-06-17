@@ -1,4 +1,8 @@
 #include <memory.h>
+#include <vector>
+
+using namespace std;
+
 
 class Solution {
 public:
@@ -47,16 +51,37 @@ public:
    * Bottom-up dynamic programming
    **********************************************************************/
   int DP(int m, int n) {
-    const int maxM = 100, maxN = 100;
-    int mat[maxM+1][maxN+1] = {{0}};
-    mat[0][1] = 1;
-    // note the index here -> picture a (m+1)*(n+1) matrix in mind
-    for (int i = 1; i < m+1; i++) {
+    /*
+      const int maxM = 100, maxN = 100;
+      int mat[maxM+1][maxN+1] = {{0}};
+      mat[0][1] = 1;
+      // note the index here -> picture a (m+1)*(n+1) matrix in mind
+      for (int i = 1; i < m+1; i++) {
       for (int j = 1; j < n+1; j++) {
-        mat[i][j] = mat[i-1][j] + mat[i][j-1];
+      mat[i][j] = mat[i-1][j] + mat[i][j-1];
+      }
+      }
+      return mat[m][n]; */
+
+
+
+    // more decent method
+    vector<vector<int> > num(m, vector<int>(n, 0));
+
+    for (int i = 0; i < n; i++) {
+      num[0][i] = 1;
+    }
+    for (int i = 0; i < m; i++) {
+      num[i][0] = 1;
+    }
+
+    for (int i = 1; i < m; i++) {
+      for (int j = 1; j < n; j++) {
+        num[i][j] = num[i][j-1] + num[i-1][j];
       }
     }
-    return mat[m][n];
+
+    return num[m-1][n-1];
   }
 
 };
