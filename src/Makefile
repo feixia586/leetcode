@@ -1,6 +1,6 @@
 CC = g++
 
-OPT = -O0 -ggdb
+OPT = -O0 -ggdb -std=c++11
 WARN = -Wall -Wno-unused-function -finline-functions
 INCPATH = -I. -I../third_party/gtest-1.7.0/include
 CFLAGS = $(WARN) $(OPT) $(INCPATH)
@@ -109,6 +109,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./131_PalindromePartitioning/PalindromePartitioning.o \
 		  ./132_PalindromePartitioningII/PalindromePartitioningII.o \
 		  ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o \
+		  ./139_WordBreak/WordBreak.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
 		  ./143_ReorderList/ReorderList.o \
@@ -218,6 +219,7 @@ TESTS = helloworld_test \
 		PalindromePartitioning_test \
 		PalindromePartitioningII_test \
 		CopyListWithRandomPointer_test \
+		WordBreak_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
 		ReorderList_test \
@@ -436,6 +438,8 @@ PalindromePartitioning_test: ./131_PalindromePartitioning/PalindromePartitioning
 PalindromePartitioningII_test: ./132_PalindromePartitioningII/PalindromePartitioningII_test.cc ./132_PalindromePartitioningII/PalindromePartitioningII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CopyListWithRandomPointer_test: ./138_CopyListWithRandomPointer/CopyListWithRandomPointer_test.cc ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+WordBreak_test: ./139_WordBreak/WordBreak_test.cc ./139_WordBreak/WordBreak.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LinkedListCycle_test: ./141_LinkedListCycle/LinkedListCycle_test.cc ./141_LinkedListCycle/LinkedListCycle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@

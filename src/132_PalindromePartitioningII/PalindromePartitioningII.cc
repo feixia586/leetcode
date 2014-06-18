@@ -23,7 +23,7 @@ public:
     for (int i = 1; i <= len; i++) {
       for (int j = 0; j < i; j++) {
         // this condition will be timeout
-        //if (isPalindrome(s.substr(j+1, i-j))) {
+        //if (isPalindrome(s.substr(j, i-j))) {
         if (ispm[j][i-1]) {
           num[i] = num[i] > num[j] + 1 ? num[j] + 1 : num[i];
         }
