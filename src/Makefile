@@ -106,6 +106,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./120_Triangle/Triangle.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
+		  ./131_PalindromePartitioning/PalindromePartitioning.o \
 		  ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
@@ -213,6 +214,7 @@ TESTS = helloworld_test \
 		MinimumDepthOfBinaryTree_test \
 		Triangle_test \
 		BinaryTreeMaximumPathSum_test \
+		PalindromePartitioning_test \
 		CopyListWithRandomPointer_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
@@ -426,6 +428,8 @@ MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBina
 Triangle_test: ./120_Triangle/Triangle_test.cc ./120_Triangle/Triangle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeMaximumPathSum_test: ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum_test.cc ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PalindromePartitioning_test: ./131_PalindromePartitioning/PalindromePartitioning_test.cc ./131_PalindromePartitioning/PalindromePartitioning.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CopyListWithRandomPointer_test: ./138_CopyListWithRandomPointer/CopyListWithRandomPointer_test.cc ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
