@@ -87,6 +87,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o \
 		  ./86_PartitionList/PartitionList.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
+		  ./90_DecodeWays/DecodeWays.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
 		  ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o \
@@ -197,6 +198,7 @@ TESTS = helloworld_test \
 		RemoveDuplicatesFromSortedListII_test \
 		PartitionList_test \
 		MergeSortedArray_test \
+		DecodeWays_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
 		BinaryTreeInorderTraversal_test \
@@ -394,6 +396,8 @@ RemoveDuplicatesFromSortedListII_test: ./83_RemoveDuplicatesFromSortedListII/Rem
 PartitionList_test: ./86_PartitionList/PartitionList_test.cc ./86_PartitionList/PartitionList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeSortedArray_test: ./88_MergeSortedArray/MergeSortedArray_test.cc ./88_MergeSortedArray/MergeSortedArray.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+DecodeWays_test: ./90_DecodeWays/DecodeWays_test.cc ./90_DecodeWays/DecodeWays.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
