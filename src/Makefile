@@ -94,6 +94,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
+		  ./97_InterleavingString/InterleavingString.o \
 		  ./98_ValidateBinarySearchTree/ValidateBinarySearchTree.o \
 		  ./99_RecoverBinarySearchTree/RecoverBinarySearchTree.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
@@ -207,6 +208,7 @@ TESTS = helloworld_test \
 		BinaryTreeInorderTraversal_test \
 		UniqueBinarySearchTrees_test \
 		UniqueBinarySearchTreesII_test \
+		InterleavingString_test \
 		ValidateBinarySearchTree_test \
 		RecoverBinarySearchTree_test \
 		BinaryTreeLevelOrderTraversal_test \
@@ -414,6 +416,8 @@ BinaryTreeInorderTraversal_test: ./94_BinaryTreeInorderTraversal/BinaryTreeInord
 UniqueBinarySearchTrees_test: ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees_test.cc ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 UniqueBinarySearchTreesII_test: ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII_test.cc ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+InterleavingString_test: ./97_InterleavingString/InterleavingString_test.cc ./97_InterleavingString/InterleavingString.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ValidateBinarySearchTree_test: ./98_ValidateBinarySearchTree/ValidateBinarySearchTree_test.cc ./98_ValidateBinarySearchTree/ValidateBinarySearchTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
