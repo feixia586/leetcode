@@ -79,6 +79,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
+		  ./72_EditDistance/EditDistance.o \
 		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
 		  ./78_Subsets/Subsets.o \
 		  ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o \
@@ -191,6 +192,7 @@ TESTS = helloworld_test \
 		TextJustification_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
+		EditDistance_test \
 		SearchA2DMatrix_test \
 		Subsets_test \
 		RemoveDuplicatesFromSortedArrayII_test \
@@ -382,6 +384,8 @@ TextJustification_test: ./68_TextJustification/TextJustification_test.cc ./68_Te
 Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+EditDistance_test: ./72_EditDistance/EditDistance_test.cc ./72_EditDistance/EditDistance.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SearchA2DMatrix_test: ./74_SearchA2DMatrix/SearchA2DMatrix_test.cc ./74_SearchA2DMatrix/SearchA2DMatrix.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
