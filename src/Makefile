@@ -105,6 +105,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./109_ConvertSortedListToBinarySearchTree/ConvertSortedListToBinarySearchTree.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
+		  ./115_DistinctSubsequences/DistinctSubsequences.o \
 		  ./120_Triangle/Triangle.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
 		  ./131_PalindromePartitioning/PalindromePartitioning.o \
@@ -216,6 +217,7 @@ TESTS = helloworld_test \
 		ConvertSortedListToBinarySearchTree_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
+		DistinctSubsequences_test \
 		Triangle_test \
 		BinaryTreeMaximumPathSum_test \
 		PalindromePartitioning_test \
@@ -432,6 +434,8 @@ ConvertSortedListToBinarySearchTree_test: ./109_ConvertSortedListToBinarySearchT
 BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./110_BalancedBinaryTree/BalancedBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree_test.cc ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+DistinctSubsequences_test: ./115_DistinctSubsequences/DistinctSubsequences_test.cc ./115_DistinctSubsequences/DistinctSubsequences.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Triangle_test: ./120_Triangle/Triangle_test.cc ./120_Triangle/Triangle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
