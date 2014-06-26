@@ -112,6 +112,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
 		  ./131_PalindromePartitioning/PalindromePartitioning.o \
 		  ./132_PalindromePartitioningII/PalindromePartitioningII.o \
+		  ./133_CloneGraph/CloneGraph.o \
 		  ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o \
 		  ./139_WordBreak/WordBreak.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
@@ -226,6 +227,7 @@ TESTS = helloworld_test \
 		BinaryTreeMaximumPathSum_test \
 		PalindromePartitioning_test \
 		PalindromePartitioningII_test \
+		CloneGraph_test \
 		CopyListWithRandomPointer_test \
 		WordBreak_test \
 		LinkedListCycle_test \
@@ -452,6 +454,8 @@ BinaryTreeMaximumPathSum_test: ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumP
 PalindromePartitioning_test: ./131_PalindromePartitioning/PalindromePartitioning_test.cc ./131_PalindromePartitioning/PalindromePartitioning.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PalindromePartitioningII_test: ./132_PalindromePartitioningII/PalindromePartitioningII_test.cc ./132_PalindromePartitioningII/PalindromePartitioningII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+CloneGraph_test: ./133_CloneGraph/CloneGraph_test.cc ./133_CloneGraph/CloneGraph.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CopyListWithRandomPointer_test: ./138_CopyListWithRandomPointer/CopyListWithRandomPointer_test.cc ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
