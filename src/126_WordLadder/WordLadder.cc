@@ -35,7 +35,8 @@ public:
             }
             if (dict.find(tmp) != dict.end()) {
               que.push(tmp);
-              dict.erase(tmp); // time out without this line
+              // the line below makes sure the visited one cannot be visited again
+              dict.erase(tmp); // timeout without this line
             }
           }
         }
