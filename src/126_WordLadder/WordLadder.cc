@@ -36,6 +36,7 @@ public:
             if (dict.find(tmp) != dict.end()) {
               que.push(tmp);
               // the line below makes sure the visited one cannot be visited again
+              // or we can use a hashset to memorize the visited ones
               dict.erase(tmp); // timeout without this line
             }
           }
