@@ -91,6 +91,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./90_DecodeWays/DecodeWays.o \
 		  ./91_SubsetsII/SubsetsII.o \
 		  ./92_ReverseLinkedListII/ReverseLinkedListII.o \
+		  ./93_RestoreIPAddresses/RestoreIPAddress.o \
 		  ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o \
 		  ./95_UniqueBinarySearchTrees/UniqueBinarySearchTrees.o \
 		  ./96_UniqueBinarySearchTreesII/UniqueBinarySearchTreesII.o \
@@ -208,6 +209,7 @@ TESTS = helloworld_test \
 		DecodeWays_test \
 		SubsetsII_test \
 		ReverseLinkedListII_test \
+		RestoreIPAddress_test \
 		BinaryTreeInorderTraversal_test \
 		UniqueBinarySearchTrees_test \
 		UniqueBinarySearchTreesII_test \
@@ -416,6 +418,8 @@ DecodeWays_test: ./90_DecodeWays/DecodeWays_test.cc ./90_DecodeWays/DecodeWays.o
 SubsetsII_test: ./91_SubsetsII/SubsetsII_test.cc ./91_SubsetsII/SubsetsII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReverseLinkedListII_test: ./92_ReverseLinkedListII/ReverseLinkedListII_test.cc ./92_ReverseLinkedListII/ReverseLinkedListII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+RestoreIPAddress_test: ./93_RestoreIPAddresses/RestoreIPAddress_test.cc ./93_RestoreIPAddresses/RestoreIPAddress.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeInorderTraversal_test: ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal_test.cc ./94_BinaryTreeInorderTraversal/BinaryTreeInorderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
