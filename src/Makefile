@@ -82,6 +82,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./72_EditDistance/EditDistance.o \
 		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
 		  ./78_Subsets/Subsets.o \
+		  ./79_WordSearch/WordSearch.o \
 		  ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o \
 		  ./81_SearchInRotatedSortedArrayII/SearchInRotatedSortedArrayII.o \
 		  ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o \
@@ -200,6 +201,7 @@ TESTS = helloworld_test \
 		EditDistance_test \
 		SearchA2DMatrix_test \
 		Subsets_test \
+		WordSearch_test \
 		RemoveDuplicatesFromSortedArrayII_test \
 		SearchInRotatedSortedArrayII_test \
 		RemoveDuplicatesFromSortedList_test \
@@ -400,6 +402,8 @@ EditDistance_test: ./72_EditDistance/EditDistance_test.cc ./72_EditDistance/Edit
 SearchA2DMatrix_test: ./74_SearchA2DMatrix/SearchA2DMatrix_test.cc ./74_SearchA2DMatrix/SearchA2DMatrix.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Subsets_test: ./78_Subsets/Subsets_test.cc ./78_Subsets/Subsets.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+WordSearch_test: ./79_WordSearch/WordSearch_test.cc ./79_WordSearch/WordSearch.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 RemoveDuplicatesFromSortedArrayII_test: ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII_test.cc ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
