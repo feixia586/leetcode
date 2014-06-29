@@ -125,6 +125,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./143_ReorderList/ReorderList.o \
 		  ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal.o \
 		  ./145_BinaryTreePostorderTraversal/BinaryTreePostorderTraversal.o \
+		  ./146_LRUCache/LRUCache.o \
 		  ./147_InsertionSortList/InsertionSortList.o \
 		  ./148_SortList/SortList.o \
 
@@ -245,6 +246,7 @@ TESTS = helloworld_test \
 		ReorderList_test \
 		BinaryTreePreorderTraversal_test \
 		BinaryTreePostorderTraversal_test \
+		LRUCache_test \
 		InsertionSortList_test \
 		SortList_test \
 
@@ -490,6 +492,8 @@ ReorderList_test: ./143_ReorderList/ReorderList_test.cc ./143_ReorderList/Reorde
 BinaryTreePreorderTraversal_test: ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal_test.cc ./144_BinaryTreePreorderTraversal/BinaryTreePreorderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreePostorderTraversal_test: ./145_BinaryTreePostorderTraversal/BinaryTreePostorderTraversal_test.cc ./145_BinaryTreePostorderTraversal/BinaryTreePostorderTraversal.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LRUCache_test: ./146_LRUCache/LRUCache_test.cc ./146_LRUCache/LRUCache.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 InsertionSortList_test: ./147_InsertionSortList/InsertionSortList_test.cc ./147_InsertionSortList/InsertionSortList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
