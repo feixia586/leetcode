@@ -115,6 +115,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
 		  ./126_WordLadder/WordLadder.o \
 		  ./127_WordLadderII/WordLadderII.o \
+		  ./128_LongestConsecutiveSequence/LongestConsecutiveSequence.o \
 		  ./131_PalindromePartitioning/PalindromePartitioning.o \
 		  ./132_PalindromePartitioningII/PalindromePartitioningII.o \
 		  ./133_CloneGraph/CloneGraph.o \
@@ -236,6 +237,7 @@ TESTS = helloworld_test \
 		BinaryTreeMaximumPathSum_test \
 		WordLadder_test \
 		WordLadderII_test \
+		LongestConsecutiveSequence_test \
 		PalindromePartitioning_test \
 		PalindromePartitioningII_test \
 		CloneGraph_test \
@@ -472,6 +474,8 @@ BinaryTreeMaximumPathSum_test: ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumP
 WordLadder_test: ./126_WordLadder/WordLadder_test.cc ./126_WordLadder/WordLadder.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 WordLadderII_test: ./127_WordLadderII/WordLadderII_test.cc ./127_WordLadderII/WordLadderII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+LongestConsecutiveSequence_test: ./128_LongestConsecutiveSequence/LongestConsecutiveSequence_test.cc ./128_LongestConsecutiveSequence/LongestConsecutiveSequence.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PalindromePartitioning_test: ./131_PalindromePartitioning/PalindromePartitioning_test.cc ./131_PalindromePartitioning/PalindromePartitioning.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
