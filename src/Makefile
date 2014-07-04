@@ -121,6 +121,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./132_PalindromePartitioningII/PalindromePartitioningII.o \
 		  ./133_CloneGraph/CloneGraph.o \
 		  ./136_SingleNumber/SingleNumber.o \
+		  ./137_SingleNumberII/SingleNumberII.o \
 		  ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o \
 		  ./139_WordBreak/WordBreak.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
@@ -245,6 +246,7 @@ TESTS = helloworld_test \
 		PalindromePartitioningII_test \
 		CloneGraph_test \
 		SingleNumber_test \
+		SingleNumberII_test \
 		CopyListWithRandomPointer_test \
 		WordBreak_test \
 		LinkedListCycle_test \
@@ -490,6 +492,8 @@ PalindromePartitioningII_test: ./132_PalindromePartitioningII/PalindromePartitio
 CloneGraph_test: ./133_CloneGraph/CloneGraph_test.cc ./133_CloneGraph/CloneGraph.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SingleNumber_test: ./136_SingleNumber/SingleNumber_test.cc ./136_SingleNumber/SingleNumber.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SingleNumberII_test: ./137_SingleNumberII/SingleNumberII_test.cc ./137_SingleNumberII/SingleNumberII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CopyListWithRandomPointer_test: ./138_CopyListWithRandomPointer/CopyListWithRandomPointer_test.cc ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
