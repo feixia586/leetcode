@@ -81,6 +81,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
 		  ./72_EditDistance/EditDistance.o \
 		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
+		  ./75_SortColors/SortColors.o \
 		  ./76_MinimumWindowSubstring/MinimumWindowSubstring.o \
 		  ./78_Subsets/Subsets.o \
 		  ./79_WordSearch/WordSearch.o \
@@ -209,6 +210,7 @@ TESTS = helloworld_test \
 		ClimbingStairs_test \
 		EditDistance_test \
 		SearchA2DMatrix_test \
+		SortColors_test \
 		MinimumWindowSubstring_test \
 		Subsets_test \
 		WordSearch_test \
@@ -418,6 +420,8 @@ ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingSta
 EditDistance_test: ./72_EditDistance/EditDistance_test.cc ./72_EditDistance/EditDistance.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SearchA2DMatrix_test: ./74_SearchA2DMatrix/SearchA2DMatrix_test.cc ./74_SearchA2DMatrix/SearchA2DMatrix.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SortColors_test: ./75_SortColors/SortColors_test.cc ./75_SortColors/SortColors.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MinimumWindowSubstring_test: ./76_MinimumWindowSubstring/MinimumWindowSubstring_test.cc ./76_MinimumWindowSubstring/MinimumWindowSubstring.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
