@@ -115,6 +115,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./120_Triangle/Triangle.o \
 		  ./121_BestTimeToBuyAndSellStock/BestTimeToBuyAndSellStock.o \
 		  ./122_BestTimeToBuyAndSellStockII/BestTimeToBuyAndSellStockII.o \
+		  ./123_BestTimeToBuyAndSellStockIII/BestTimeToBuyAndSellStockIII.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
 		  ./126_WordLadder/WordLadder.o \
 		  ./127_WordLadderII/WordLadderII.o \
@@ -242,6 +243,7 @@ TESTS = helloworld_test \
 		Triangle_test \
 		BestTimeToBuyAndSellStock_test \
 		BestTimeToBuyAndSellStockII_test \
+		BestTimeToBuyAndSellStockIII_test \
 		BinaryTreeMaximumPathSum_test \
 		WordLadder_test \
 		WordLadderII_test \
@@ -484,6 +486,8 @@ Triangle_test: ./120_Triangle/Triangle_test.cc ./120_Triangle/Triangle.o
 BestTimeToBuyAndSellStock_test: ./121_BestTimeToBuyAndSellStock/BestTimeToBuyAndSellStock_test.cc ./121_BestTimeToBuyAndSellStock/BestTimeToBuyAndSellStock.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BestTimeToBuyAndSellStockII_test: ./122_BestTimeToBuyAndSellStockII/BestTimeToBuyAndSellStockII_test.cc ./122_BestTimeToBuyAndSellStockII/BestTimeToBuyAndSellStockII.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+BestTimeToBuyAndSellStockIII_test: ./123_BestTimeToBuyAndSellStockIII/BestTimeToBuyAndSellStockIII_test.cc ./123_BestTimeToBuyAndSellStockIII/BestTimeToBuyAndSellStockIII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeMaximumPathSum_test: ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum_test.cc ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
