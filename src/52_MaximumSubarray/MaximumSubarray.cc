@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <assert.h>
 
 using namespace std;
 
@@ -8,6 +9,29 @@ public:
     return DivideConquer(A, 0, n-1);
   }
 
+  /************************************************************
+   * DivideConquer Method
+   ************************************************************/
+  int onePassMethod(int A[], int n) {
+    assert(n > 0);
+    int max_sum  = A[0];
+    int tmp_sum = 0;
+    for (int i = 0; i < n; i++) {
+      if (tmp_sum < 0) {
+        tmp_sum = A[i];
+      } else {
+        tmp_sum += A[i];
+      }
+
+      max_sum = max(tmp_sum, max_sum);
+    }
+
+    return max_sum;
+  }
+
+  /************************************************************
+   * DivideConquer Method
+   ************************************************************/
   int DivideConquer(int A[], int low, int high) {
     if (low == high)
       return A[low];
