@@ -1,4 +1,6 @@
 #include <vector>
+#include <assert.h>
+#include <climits>
 #include <algorithm>
 #include <cmath>
 
@@ -7,23 +9,28 @@ using namespace std;
 class Solution {
 public:
   int threeSumClosest(vector<int> &num, int target) {
-    sort(num.begin(), num.end());
+    int size = num.size();
+    assert(size >= 3);
 
-    int res = num[0] + num[1] + num[num.size()-1];
-    int len = num.size();
-    for (int low = 0; low < len-2; low++) {
-      int high = len - 1;
+    sort(num.begin(), num.end());
+    int diff = INT_MAX, res;
+    for (int low = 0; low < size - 2; low++) {
+      int high = size - 1;
       int p = low + 1;
-      while(p < high) {
+      while (p < high) {
         int sum = num[low] + num[p] + num[high];
-        if(abs(sum - target) <= abs(res - target))
+        if (abs(sum - target) < diff) {
+          diff = abs(sum - target);
           res = sum;
-        if(sum > target)
+        }
+
+        if (sum > target) {
           high--;
-        else if (sum < target)
+        } else if (sum < target) {
           p++;
-        else
-          return res;
+        } else {
+          return sum;
+        }
       }
     }
 

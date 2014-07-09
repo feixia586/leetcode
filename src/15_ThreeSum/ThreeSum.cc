@@ -11,13 +11,12 @@ public:
     return sortAndsolve(num);
   }
   /************************************************************
-   * Sort first Method (Recommended). Time O(n^2). Need to optimize lookup O(1)
+   * Sort first Method (Recommended). Time O(n^2).
    ************************************************************/
   vector<vector<int> > sortAndsolve(vector<int>& num) {
     sort(num.begin(), num.end());
 
     vector<vector<int> > res;
-//    set<vector<int> > s;
     int len = num.size();
     for (int low = 0; low < len-2; low++) {
       // skip duplicates
