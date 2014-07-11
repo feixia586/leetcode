@@ -137,6 +137,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./147_InsertionSortList/InsertionSortList.o \
 		  ./148_SortList/SortList.o \
 		  ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation.o \
+		  ./151_ReverseWordsInAString/ReverseWordsInAString.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -267,6 +268,7 @@ TESTS = helloworld_test \
 		InsertionSortList_test \
 		SortList_test \
 		EvaluateReversePolishNotation_test \
+		ReverseWordsInAString_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -534,6 +536,8 @@ InsertionSortList_test: ./147_InsertionSortList/InsertionSortList_test.cc ./147_
 SortList_test: ./148_SortList/SortList_test.cc ./148_SortList/SortList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 EvaluateReversePolishNotation_test: ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation_test.cc ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ReverseWordsInAString_test: ./151_ReverseWordsInAString/ReverseWordsInAString_test.cc ./151_ReverseWordsInAString/ReverseWordsInAString.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
