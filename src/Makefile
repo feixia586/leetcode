@@ -136,6 +136,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./146_LRUCache/LRUCache.o \
 		  ./147_InsertionSortList/InsertionSortList.o \
 		  ./148_SortList/SortList.o \
+		  ./149_MaxPointsOnALine/MaxPointsOnALine.o \
 		  ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation.o \
 		  ./151_ReverseWordsInAString/ReverseWordsInAString.o \
 
@@ -267,6 +268,7 @@ TESTS = helloworld_test \
 		LRUCache_test \
 		InsertionSortList_test \
 		SortList_test \
+		MaxPointsOnALine_test \
 		EvaluateReversePolishNotation_test \
 		ReverseWordsInAString_test \
 
@@ -534,6 +536,8 @@ LRUCache_test: ./146_LRUCache/LRUCache_test.cc ./146_LRUCache/LRUCache.o
 InsertionSortList_test: ./147_InsertionSortList/InsertionSortList_test.cc ./147_InsertionSortList/InsertionSortList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SortList_test: ./148_SortList/SortList_test.cc ./148_SortList/SortList.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MaxPointsOnALine_test: ./149_MaxPointsOnALine/MaxPointsOnALine_test.cc ./149_MaxPointsOnALine/MaxPointsOnALine.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 EvaluateReversePolishNotation_test: ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation_test.cc ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
