@@ -124,6 +124,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./131_PalindromePartitioning/PalindromePartitioning.o \
 		  ./132_PalindromePartitioningII/PalindromePartitioningII.o \
 		  ./133_CloneGraph/CloneGraph.o \
+		  ./134_GasStation/GasStation.o \
 		  ./135_Candy/Candy.o \
 		  ./136_SingleNumber/SingleNumber.o \
 		  ./137_SingleNumberII/SingleNumberII.o \
@@ -257,6 +258,7 @@ TESTS = helloworld_test \
 		PalindromePartitioning_test \
 		PalindromePartitioningII_test \
 		CloneGraph_test \
+		GasStation_test \
 		Candy_test \
 		SingleNumber_test \
 		SingleNumberII_test \
@@ -514,6 +516,8 @@ PalindromePartitioning_test: ./131_PalindromePartitioning/PalindromePartitioning
 PalindromePartitioningII_test: ./132_PalindromePartitioningII/PalindromePartitioningII_test.cc ./132_PalindromePartitioningII/PalindromePartitioningII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 CloneGraph_test: ./133_CloneGraph/CloneGraph_test.cc ./133_CloneGraph/CloneGraph.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+GasStation_test: ./134_GasStation/GasStation_test.cc ./134_GasStation/GasStation.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Candy_test: ./135_Candy/Candy_test.cc ./135_Candy/Candy.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
