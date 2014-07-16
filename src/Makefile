@@ -112,6 +112,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./109_ConvertSortedListToBinarySearchTree/ConvertSortedListToBinarySearchTree.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
+		  ./114_FlattenBinaryTreeToLinkedList/FlattenBinaryTreeToLinkedList.o \
 		  ./115_DistinctSubsequences/DistinctSubsequences.o \
 		  ./116_PopulatingNextRightPointersInEachNode/PopulatingNextRightPointersInEachNode.o \
 		  ./117_PopulatingNextRightPointersInEachNodeII/PopulatingNextRightPointersInEachNodeII.o \
@@ -253,6 +254,7 @@ TESTS = helloworld_test \
 		ConvertSortedListToBinarySearchTree_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
+		FlattenBinaryTreeToLinkedList_test \
 		DistinctSubsequences_test \
 		PopulatingNextRightPointersInEachNode_test \
 		PopulatingNextRightPointersInEachNodeII_test \
@@ -506,6 +508,8 @@ ConvertSortedListToBinarySearchTree_test: ./109_ConvertSortedListToBinarySearchT
 BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./110_BalancedBinaryTree/BalancedBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree_test.cc ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+FlattenBinaryTreeToLinkedList_test: ./114_FlattenBinaryTreeToLinkedList/FlattenBinaryTreeToLinkedList_test.cc ./114_FlattenBinaryTreeToLinkedList/FlattenBinaryTreeToLinkedList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 DistinctSubsequences_test: ./115_DistinctSubsequences/DistinctSubsequences_test.cc ./115_DistinctSubsequences/DistinctSubsequences.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
