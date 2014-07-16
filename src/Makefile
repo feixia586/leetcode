@@ -121,6 +121,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./126_WordLadder/WordLadder.o \
 		  ./127_WordLadderII/WordLadderII.o \
 		  ./128_LongestConsecutiveSequence/LongestConsecutiveSequence.o \
+		  ./130_SurroundedRegions/SurroundedRegions.o \
 		  ./131_PalindromePartitioning/PalindromePartitioning.o \
 		  ./132_PalindromePartitioningII/PalindromePartitioningII.o \
 		  ./133_CloneGraph/CloneGraph.o \
@@ -255,6 +256,7 @@ TESTS = helloworld_test \
 		WordLadder_test \
 		WordLadderII_test \
 		LongestConsecutiveSequence_test \
+		SurroundedRegions_test \
 		PalindromePartitioning_test \
 		PalindromePartitioningII_test \
 		CloneGraph_test \
@@ -510,6 +512,8 @@ WordLadder_test: ./126_WordLadder/WordLadder_test.cc ./126_WordLadder/WordLadder
 WordLadderII_test: ./127_WordLadderII/WordLadderII_test.cc ./127_WordLadderII/WordLadderII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LongestConsecutiveSequence_test: ./128_LongestConsecutiveSequence/LongestConsecutiveSequence_test.cc ./128_LongestConsecutiveSequence/LongestConsecutiveSequence.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SurroundedRegions_test: ./130_SurroundedRegions/SurroundedRegions_test.cc ./130_SurroundedRegions/SurroundedRegions.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PalindromePartitioning_test: ./131_PalindromePartitioning/PalindromePartitioning_test.cc ./131_PalindromePartitioning/PalindromePartitioning.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
