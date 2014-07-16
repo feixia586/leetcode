@@ -113,6 +113,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./115_DistinctSubsequences/DistinctSubsequences.o \
+		  ./116_PopulatingNextRightPointersInEachNode/PopulatingNextRightPointersInEachNode.o \
 		  ./118_PascalsTriangle/PascalsTriangle.o \
 		  ./119_PascalsTriangleII/PascalsTriangleII.o \
 		  ./120_Triangle/Triangle.o \
@@ -252,6 +253,7 @@ TESTS = helloworld_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
 		DistinctSubsequences_test \
+		PopulatingNextRightPointersInEachNode_test \
 		PascalsTriangle_test \
 		PascalsTriangleII_test \
 		Triangle_test \
@@ -504,6 +506,8 @@ BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./1
 MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree_test.cc ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 DistinctSubsequences_test: ./115_DistinctSubsequences/DistinctSubsequences_test.cc ./115_DistinctSubsequences/DistinctSubsequences.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PopulatingNextRightPointersInEachNode_test: ./116_PopulatingNextRightPointersInEachNode/PopulatingNextRightPointersInEachNode_test.cc ./116_PopulatingNextRightPointersInEachNode/PopulatingNextRightPointersInEachNode.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PascalsTriangle_test: ./118_PascalsTriangle/PascalsTriangle_test.cc ./118_PascalsTriangle/PascalsTriangle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
