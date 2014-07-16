@@ -118,6 +118,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./122_BestTimeToBuyAndSellStockII/BestTimeToBuyAndSellStockII.o \
 		  ./123_BestTimeToBuyAndSellStockIII/BestTimeToBuyAndSellStockIII.o \
 		  ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o \
+		  ./125_ValidPalindrome/ValidPalindrome.o \
 		  ./126_WordLadder/WordLadder.o \
 		  ./127_WordLadderII/WordLadderII.o \
 		  ./128_LongestConsecutiveSequence/LongestConsecutiveSequence.o \
@@ -254,6 +255,7 @@ TESTS = helloworld_test \
 		BestTimeToBuyAndSellStockII_test \
 		BestTimeToBuyAndSellStockIII_test \
 		BinaryTreeMaximumPathSum_test \
+		ValidPalindrome_test \
 		WordLadder_test \
 		WordLadderII_test \
 		LongestConsecutiveSequence_test \
@@ -508,6 +510,8 @@ BestTimeToBuyAndSellStockII_test: ./122_BestTimeToBuyAndSellStockII/BestTimeToBu
 BestTimeToBuyAndSellStockIII_test: ./123_BestTimeToBuyAndSellStockIII/BestTimeToBuyAndSellStockIII_test.cc ./123_BestTimeToBuyAndSellStockIII/BestTimeToBuyAndSellStockIII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeMaximumPathSum_test: ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum_test.cc ./124_BinaryTreeMaximumPathSum/BinaryTreeMaximumPathSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ValidPalindrome_test: ./125_ValidPalindrome/ValidPalindrome_test.cc ./125_ValidPalindrome/ValidPalindrome.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 WordLadder_test: ./126_WordLadder/WordLadder_test.cc ./126_WordLadder/WordLadder.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
