@@ -113,6 +113,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./110_BalancedBinaryTree/BalancedBinaryTree.o \
 		  ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o \
 		  ./112_PathSum/PathSum.o \
+		  ./113_PathSumII/PathSumII.o \
 		  ./114_FlattenBinaryTreeToLinkedList/FlattenBinaryTreeToLinkedList.o \
 		  ./115_DistinctSubsequences/DistinctSubsequences.o \
 		  ./116_PopulatingNextRightPointersInEachNode/PopulatingNextRightPointersInEachNode.o \
@@ -256,6 +257,7 @@ TESTS = helloworld_test \
 		BalancedBinaryTree_test \
 		MinimumDepthOfBinaryTree_test \
 		PathSum_test \
+		PathSumII_test \
 		FlattenBinaryTreeToLinkedList_test \
 		DistinctSubsequences_test \
 		PopulatingNextRightPointersInEachNode_test \
@@ -512,6 +514,8 @@ BalancedBinaryTree_test: ./110_BalancedBinaryTree/BalancedBinaryTree_test.cc ./1
 MinimumDepthOfBinaryTree_test: ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree_test.cc ./111_MinimumDepthOfBinaryTree/MinimumDepthOfBinaryTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PathSum_test: ./112_PathSum/PathSum_test.cc ./112_PathSum/PathSum.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+PathSumII_test: ./113_PathSumII/PathSumII_test.cc ./113_PathSumII/PathSumII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 FlattenBinaryTreeToLinkedList_test: ./114_FlattenBinaryTreeToLinkedList/FlattenBinaryTreeToLinkedList_test.cc ./114_FlattenBinaryTreeToLinkedList/FlattenBinaryTreeToLinkedList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
