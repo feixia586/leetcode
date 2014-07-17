@@ -79,6 +79,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./68_TextJustification/TextJustification.o \
 		  ./69_Sqrt_x/Sqrt_x.o \
 		  ./70_ClimbingStairs/ClimbingStairs.o \
+		  ./71_SimplifyPath/SimplifyPath.o \
 		  ./72_EditDistance/EditDistance.o \
 		  ./73_SetMatrixZeroes/SetMatrixZeroes.o \
 		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
@@ -229,6 +230,7 @@ TESTS = helloworld_test \
 		TextJustification_test \
 		Sqrt_x_test \
 		ClimbingStairs_test \
+		SimplifyPath_test \
 		EditDistance_test \
 		SetMatrixZeroes_test \
 		SearchA2DMatrix_test \
@@ -458,6 +460,8 @@ TextJustification_test: ./68_TextJustification/TextJustification_test.cc ./68_Te
 Sqrt_x_test: ./69_Sqrt_x/Sqrt_x_test.cc ./69_Sqrt_x/Sqrt_x.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ClimbingStairs_test: ./70_ClimbingStairs/ClimbingStairs_test.cc ./70_ClimbingStairs/ClimbingStairs.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SimplifyPath_test: ./71_SimplifyPath/SimplifyPath_test.cc ./71_SimplifyPath/SimplifyPath.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 EditDistance_test: ./72_EditDistance/EditDistance_test.cc ./72_EditDistance/EditDistance.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
