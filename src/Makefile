@@ -91,6 +91,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o \
 		  ./84_LargestRectangleInHistogram/LargestRectangleInHistogram.o \
 		  ./86_PartitionList/PartitionList.o \
+		  ./87_ScrambleString/ScrambleString.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
 		  ./89_GrayCode/GrayCode.o \
 		  ./90_DecodeWays/DecodeWays.o \
@@ -237,6 +238,7 @@ TESTS = helloworld_test \
 		RemoveDuplicatesFromSortedListII_test \
 		LargestRectangleInHistogram_test \
 		PartitionList_test \
+		ScrambleString_test \
 		MergeSortedArray_test \
 		GrayCode_test \
 		DecodeWays_test \
@@ -474,6 +476,8 @@ RemoveDuplicatesFromSortedListII_test: ./83_RemoveDuplicatesFromSortedListII/Rem
 LargestRectangleInHistogram_test: ./84_LargestRectangleInHistogram/LargestRectangleInHistogram_test.cc ./84_LargestRectangleInHistogram/LargestRectangleInHistogram.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PartitionList_test: ./86_PartitionList/PartitionList_test.cc ./86_PartitionList/PartitionList.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+ScrambleString_test: ./87_ScrambleString/ScrambleString_test.cc ./87_ScrambleString/ScrambleString.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MergeSortedArray_test: ./88_MergeSortedArray/MergeSortedArray_test.cc ./88_MergeSortedArray/MergeSortedArray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
