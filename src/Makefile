@@ -90,6 +90,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./82_RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.o \
 		  ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o \
 		  ./84_LargestRectangleInHistogram/LargestRectangleInHistogram.o \
+		  ./85_MaximalRectangle/MaximalRectangle.o \
 		  ./86_PartitionList/PartitionList.o \
 		  ./87_ScrambleString/ScrambleString.o \
 		  ./88_MergeSortedArray/MergeSortedArray.o \
@@ -237,6 +238,7 @@ TESTS = helloworld_test \
 		RemoveDuplicatesFromSortedList_test \
 		RemoveDuplicatesFromSortedListII_test \
 		LargestRectangleInHistogram_test \
+		MaximalRectangle_test \
 		PartitionList_test \
 		ScrambleString_test \
 		MergeSortedArray_test \
@@ -474,6 +476,8 @@ RemoveDuplicatesFromSortedList_test: ./82_RemoveDuplicatesFromSortedList/RemoveD
 RemoveDuplicatesFromSortedListII_test: ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII_test.cc ./83_RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LargestRectangleInHistogram_test: ./84_LargestRectangleInHistogram/LargestRectangleInHistogram_test.cc ./84_LargestRectangleInHistogram/LargestRectangleInHistogram.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MaximalRectangle_test: ./85_MaximalRectangle/MaximalRectangle_test.cc ./85_MaximalRectangle/MaximalRectangle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 PartitionList_test: ./86_PartitionList/PartitionList_test.cc ./86_PartitionList/PartitionList.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
