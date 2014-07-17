@@ -83,6 +83,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./74_SearchA2DMatrix/SearchA2DMatrix.o \
 		  ./75_SortColors/SortColors.o \
 		  ./76_MinimumWindowSubstring/MinimumWindowSubstring.o \
+		  ./77_Combinations/Combinations.o \
 		  ./78_Subsets/Subsets.o \
 		  ./79_WordSearch/WordSearch.o \
 		  ./80_RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.o \
@@ -231,6 +232,7 @@ TESTS = helloworld_test \
 		SearchA2DMatrix_test \
 		SortColors_test \
 		MinimumWindowSubstring_test \
+		Combinations_test \
 		Subsets_test \
 		WordSearch_test \
 		RemoveDuplicatesFromSortedArrayII_test \
@@ -462,6 +464,8 @@ SearchA2DMatrix_test: ./74_SearchA2DMatrix/SearchA2DMatrix_test.cc ./74_SearchA2
 SortColors_test: ./75_SortColors/SortColors_test.cc ./75_SortColors/SortColors.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 MinimumWindowSubstring_test: ./76_MinimumWindowSubstring/MinimumWindowSubstring_test.cc ./76_MinimumWindowSubstring/MinimumWindowSubstring.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+Combinations_test: ./77_Combinations/Combinations_test.cc ./77_Combinations/Combinations.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 Subsets_test: ./78_Subsets/Subsets_test.cc ./78_Subsets/Subsets.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
