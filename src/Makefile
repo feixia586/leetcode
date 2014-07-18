@@ -148,6 +148,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./137_SingleNumberII/SingleNumberII.o \
 		  ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o \
 		  ./139_WordBreak/WordBreak.o \
+		  ./140_WordBreakII/WordBreakII.o \
 		  ./141_LinkedListCycle/LinkedListCycle.o \
 		  ./142_LinkedListCycleII/LinkedListCycleII.o \
 		  ./143_ReorderList/ReorderList.o \
@@ -300,6 +301,7 @@ TESTS = helloworld_test \
 		SingleNumberII_test \
 		CopyListWithRandomPointer_test \
 		WordBreak_test \
+		WordBreakII_test \
 		LinkedListCycle_test \
 		LinkedListCycleII_test \
 		ReorderList_test \
@@ -600,6 +602,8 @@ SingleNumberII_test: ./137_SingleNumberII/SingleNumberII_test.cc ./137_SingleNum
 CopyListWithRandomPointer_test: ./138_CopyListWithRandomPointer/CopyListWithRandomPointer_test.cc ./138_CopyListWithRandomPointer/CopyListWithRandomPointer.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 WordBreak_test: ./139_WordBreak/WordBreak_test.cc ./139_WordBreak/WordBreak.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+WordBreakII_test: ./140_WordBreakII/WordBreakII_test.c ./140_WordBreakII/WordBreakII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 LinkedListCycle_test: ./141_LinkedListCycle/LinkedListCycle_test.cc ./141_LinkedListCycle/LinkedListCycle.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
