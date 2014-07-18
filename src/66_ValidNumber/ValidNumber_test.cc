@@ -4,6 +4,7 @@
 TEST(ValidNumber, TestA) {
   Solution sol;
 
-  char s1[] = " 0.1 ";
-  ASSERT_TRUE(sol.isNumber(s1));
+  char s1[] = " 005047e+6";
+  bool res1 = sol.isNumber(s1);
+  ASSERT_TRUE(res1);
 }
