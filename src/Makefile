@@ -109,6 +109,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./98_ValidateBinarySearchTree/ValidateBinarySearchTree.o \
 		  ./99_RecoverBinarySearchTree/RecoverBinarySearchTree.o \
 		  ./100_SameTree/SameTree.o \
+		  ./101_SymmetricTree/SymmetricTree.o \
 		  ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o \
 		  ./103_BinaryTreeZigzagLevelOrderTraversal/BinaryTreeZigzagLevelOrderTraversal.o \
 		  ./104_MaximumDepthOfBinaryTree/MaximumDepthOfBinaryTree.o \
@@ -260,6 +261,7 @@ TESTS = helloworld_test \
 		ValidateBinarySearchTree_test \
 		RecoverBinarySearchTree_test \
 		SameTree_test \
+		SymmetricTree_test \
 		BinaryTreeLevelOrderTraversal_test \
 		BinaryTreeZigzagLevelOrderTraversal_test \
 		MaximumDepthOfBinaryTree_test \
@@ -520,6 +522,8 @@ ValidateBinarySearchTree_test: ./98_ValidateBinarySearchTree/ValidateBinarySearc
 RecoverBinarySearchTree_test: ./99_RecoverBinarySearchTree/RecoverBinarySearchTree_test.cc ./99_RecoverBinarySearchTree/RecoverBinarySearchTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 SameTree_test: ./100_SameTree/SameTree_test.cc ./100_SameTree/SameTree.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+SymmetricTree_test: ./101_SymmetricTree/SymmetricTree_test.cc ./101_SymmetricTree/SymmetricTree.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 BinaryTreeLevelOrderTraversal_test: ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal_test.cc ./102_BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
