@@ -1,25 +1,23 @@
+#include <assert.h>
+
+using namespace std;
+
 class Solution {
-public:
-  int reverse(int x) {
-    if (x == 0)
-      return 0;
+  public:
+    int reverse(int x) {
+      int sign = x > 0 ? 1 : -1;
+      x *= sign;
 
-    int res = 0;
-    int sign = x > 0 ? 1 : -1;
+      int res = 0; 
+      while (x != 0) {
+        res = res * 10 + x % 10;
+        x /= 10;
+      }
 
-    int rem = 0;
-    int quotient = x > 0 ? x : -1 * x;
-    int tmp;
-    while (quotient != 0) {
-      tmp = quotient / 10;
-      rem = quotient - tmp * 10;
-      quotient /= 10;
+      assert(res >= 0); // make sure it doesn't overflow
 
-      res = 10 * res + rem;
+      res *= sign;
+
+      return res;
     }
-
-    res *= sign;
-
-    return res;
-  }
 };
