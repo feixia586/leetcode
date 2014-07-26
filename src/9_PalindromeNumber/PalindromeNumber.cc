@@ -3,28 +3,26 @@
 class Solution {
 public:
   bool isPalindrome(int x) {
-    if (x < 0)
+    if (x < 0) {
       return false;
-
-    int len = 0;
-    int tmp = x;
-    while (tmp != 0) {
-      tmp /= 10;
-      len++;
     }
 
-    if (len == 0 || len == 1)
-      return true;
+    int div = 1;
+    while (x / div >= 10) {
+      div *= 10;
+    }
 
-    while (len > 1) {
-      int last = x % 10;
-      x = x / 10;
-      int magnitude = pow(10.0, len-2);
-      int first = x / magnitude;
-      x -= first * magnitude;
-      if (last != first)
+    while (x != 0) {
+      int l = x / div;
+      int r = x % 10;
+      if (l != r) {
         return false;
-      len -= 2;
+      }
+
+      x = x % div;
+      x = x / 10;
+
+      div /= 100;
     }
 
     return true;
