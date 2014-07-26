@@ -1,32 +1,47 @@
+#include <iostream>
 #include <climits>
+
+using namespace std;
+
 class Solution {
-public:
-  int atoi(const char *str) {
-    int res = 0;
-    int digit = 0;
-    int sign = 1;
-    int p = 0;
+  public:
+    int atoi(const char *str) {
+      if (str == NULL) {
+        return 0;
+      }
 
-    // skip the initial whitespace
-    while (str[p] == ' ') p++;
+      int res = 0;
+      int i = 0, sign = 1;
+      while (str[i] != 0 && str[i] == ' ') {
+        i++;
+      }
 
-    // take the optional plus or minus sign
-    if (str[p] == '+') { sign = 1; p++; }
-    else if(str[p] == '-') {sign = -1; p++; }
+      if (str[i] == '+') { sign = 1; i++; } 
+      else if (str[i] == '-') { sign = -1; i++; } 
+      if (!isDigit(str[i])) { return 0; }
 
-    // INT_MAX = 2147483647; INT_MIN = -2147483648
-    for ( ; str[p] != 0; p++) {
-      if (str[p] < '0' || str[p] > '9')
-        break;
+      for ( ; str[i] != 0; i++) {
+        if (!isDigit(str[i])) {
+          break;
+        }
 
-      digit = str[p] - '0';
-      if (res > 214748365 || (res == 214748364 && digit > 7))
-        return sign > 0 ? INT_MAX : INT_MIN;
+        int digit = str[i] - '0';
+        if (res >= INT_MAX / 10 + 1 || (res == INT_MAX / 10 && digit > INT_MAX % 10)) {
+          return sign > 0 ? INT_MAX : INT_MIN;
+        }
+        res = res * 10 + digit;
+      }
 
-      res = res * 10  + digit;
+      res *= sign;
+
+      return res;
     }
 
-    res *= sign;
-    return res;
-  }
+    bool isDigit(char ch) {
+      if (ch >= '0' && ch <= '9') {
+        return true;
+      } else {
+        return false;
+      }
+    }
 };
