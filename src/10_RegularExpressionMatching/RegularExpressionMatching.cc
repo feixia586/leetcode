@@ -7,6 +7,8 @@ class Solution {
 public:
   bool isMatch(const char *s, const char *p) {
     assert(s != NULL && p != NULL);
+    assert(*p != '*');
+
     if (*p == 0)
       return *s == 0;
 
