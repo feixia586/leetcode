@@ -1,6 +1,12 @@
+#include <iostream>
+#include <assert.h>
+
+using namespace std;
+
 class Solution {
 public:
   bool isMatch(const char *s, const char *p) {
+    assert(s != NULL && p != NULL);
     if (*p == 0)
       return *s == 0;
 
