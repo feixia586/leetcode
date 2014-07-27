@@ -6,36 +6,33 @@ using namespace std;
 class Solution {
 public:
   bool isValid(string s) {
-    int len = s.length();
-    if (len == 0)
+    if (s.length() == 0) {
       return true;
+    }
 
+    int len = s.length();
     stack<char> stk;
     for (int i = 0; i < len; i++) {
-      switch (s[i]) {
-      case '(':
-      case '{':
-      case '[': stk.push(s[i]); break;
-      case ')':
-        if (stk.empty()) return false;
-        else if (stk.top() == '(') { stk.pop(); break; }
-        else return false;
-      case '}':
-        if (stk.empty()) return false;
-        else if (stk.top() == '{') { stk.pop(); break; }
-        else return false;
-      case ']':
-        if (stk.empty()) return false;
-        else if (stk.top() == '[') { stk.pop(); break; }
-        else return false;
-      default:
-        return false;
+      if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
+        stk.push(s[i]);
+      } else {
+        if (stk.empty()) {
+          return false;
+        }
+
+        char ch = stk.top();
+        if (ch == '(' && s[i] != ')') { return false; }
+        if (ch == '[' && s[i] != ']') { return false; }
+        if (ch == '{' && s[i] != '}') { return false; }
+
+        stk.pop();
       }
     }
 
-    if(stk.empty())
+    if (stk.empty()) {
       return true;
-    else
+    } else {
       return false;
+    }
   }
 };
