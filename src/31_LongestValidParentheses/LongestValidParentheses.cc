@@ -47,7 +47,7 @@ public:
    ******************************************************************/
   int DP_Method(string s) {
     // state: f[i]: length of the longest valid parentheses that ends with ith character
-    // function: f[i] = f[i-1] + 2 + f[j-1] (where j = i - f[i-1] - 1) if i-th of s == ')' and j-th of s == ')';
+    // function: f[i] = f[i-1] + 2 + f[j-1] (where j = i - f[i-1] - 1) if i-th of s == ')' and j-th of s == '(';
     //                = 0, otherwise, including j < 1
     // init: f[0] = 0
     // answer: max(f[i])
