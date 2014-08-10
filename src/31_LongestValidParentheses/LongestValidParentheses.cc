@@ -6,22 +6,23 @@ using namespace std;
 class Solution {
 public:
   int longestValidParentheses(string s) {
-    stack<int> st;
-    int res = 0, p = -1;
-
     int len = s.length();
+
+    stack<int> stk;
+    int res = 0, pos = -1;
     for (int i = 0; i < len; i++) {
-      if (s[i] == '(')
-        st.push(i);
-      else {
-        if (st.empty())
-          p = i;
-        else {
-          st.pop();
-          if (st.empty())
-            res = res > i - p ? res : i - p;
-          else
-            res = res > i - st.top() ? res : i - st.top();
+      if (s[i] == '(') {
+        stk.push(i);
+      } else {
+        if (stk.empty()) {
+          pos = i;
+        } else {
+          stk.pop();
+          if (stk.empty()) {
+            res = max(res, i - pos);
+          } else {
+            res = max(res, i - stk.top());
+          }
         }
       }
     }
