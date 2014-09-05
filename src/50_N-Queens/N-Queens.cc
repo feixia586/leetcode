@@ -21,62 +21,63 @@ public:
       return res;
     }
 
-    search(res, cols, n);
+    NQueensHelper(res, cols, n);
     return res;
   }
-  // cols[i] --> the column position of row i
-  void search(vector<vector<string> > &res, vector<int> &cols, int n) {
-    if ((int)cols.size() == n) {
-      res.push_back(drawChessboard(cols));
+  void NQueensHelper(vector<vector<string> > &res, vector<int> &rows, int n) {
+    int size = rows.size();
+    if (size == n) {
+      res.push_back(drawChessboard(rows));
       return;
     }
 
-    for (int i = 0; i < n; i++) {
-      if (!isValid(cols, i)) {
+    for (int j = 0; j < n; j++) {
+      if (!isValid(j, rows)) {
         continue;
       }
-
-      cols.push_back(i);
-      search(res, cols, n);
-      cols.pop_back();
+      rows.push_back(j);
+      NQueensHelper(res, rows, n);
+      rows.pop_back();
     }
   }
 
-  bool isValid(vector<int> &cols, int col) {
-    int rowNum = cols.size();
-    for (int i = 0; i < rowNum; i++) {
-      if (cols[i] == col) {
-        return false;
-      }
-
-      if (i - cols[i] == rowNum - col) {
-        return false;
-      }
-
-      if (i + cols[i] == rowNum + col) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  vector<string> drawChessboard(vector<int> &cols) {
+  // rows[i] --> the column position of row i
+  vector<string> drawChessboard(vector<int> &rows) {
+    int n = rows.size();
     vector<string> chessboard;
-    int size = cols.size();
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < n; i++) {
       string str = "";
-      for (int j = 0; j < size; j++) {
-        if (j == cols[i]) {
-          str += "Q";
+      for (int j = 0; j < n; j++) {
+        if (j == rows[i]) {
+          str.push_back('Q');
         } else {
-          str += ".";
+          str.push_back('.');
         }
       }
       chessboard.push_back(str);
     }
 
     return chessboard;
+  }
+
+  bool isValid(int col, vector<int> &rows) {
+    int rowNum = rows.size();
+
+    for (int i = 0; i < rowNum; i++) {
+      if (rows[i] == col) {
+        return false;
+      }
+
+      if (i - rows[i] == rowNum - col) {
+        return false;
+      }
+
+      if (i + rows[i] == rowNum + col) {
+        return false;
+      }
+    }
+
+    return true;
   }
   /***************************************************************************
    * Method 2
