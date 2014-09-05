@@ -1,4 +1,5 @@
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -6,28 +7,36 @@ class Solution {
 public:
   vector<vector<int> > permuteUnique(vector<int> &num) {
     vector<vector<int> > res;
-    backtrack(num, 0, res);
+    vector<int> perm;
+
+    if (num.size() == 0) {
+      return res;
+    }
+
+    vector<int> visited(num.size(), 0);
+    sort(num.begin(), num.end());
+    permuteUniqueHelper(res, perm, num, visited);
     return res;
   }
 
-  void backtrack(vector<int> num, int k, vector<vector<int> > &res) {
-    int size = num.size();
-    if (k == size) {
-      res.push_back(num);
+  void permuteUniqueHelper(vector<vector<int> > &res, vector<int> &perm,
+                           vector<int> &num, vector<int> &visited) {
+    if (perm.size() == num.size()) {
+      res.push_back(perm);
       return;
     }
 
-    for (int i = k; i < size; i++) {
-      bool sig = false;
-      for (int p = k; p < i; p++) {
-        if (num[p] == num[i])
-          sig = true;;
+    int size = num.size();
+    for (int i = 0; i < size; i++) {
+      if (visited[i] == 1 || (i != 0 && num[i-1] == num[i] && visited[i-1] == 0)) {
+        continue;
       }
-      if (sig) continue;
 
-      swap(num[i], num[k]);
-      backtrack(num, k+1, res);
-      swap(num[k], num[i]);
+      perm.push_back(num[i]);
+      visited[i] = 1;
+      permuteUniqueHelper(res, perm, num, visited);
+      perm.pop_back();
+      visited[i] = 0;
     }
   }
 };
