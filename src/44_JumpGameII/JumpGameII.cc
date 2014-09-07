@@ -30,10 +30,14 @@ public:
 
     if (ms_maxdis >= n-1) return minstep;
     else return -1;
+    // Note: even the return is minstep, you cannot say there exists a
+    // solution, for example, [3, 2, 1, 0, 4, 5]. So you cannot use this method
+    // to determine whether there exists a solution. A good way to do that --
+    // DP (see Jump Game)
   }
 
   /***********************************************************************
-   * DP method -- Time out. Time O(n^2); Space O(n)
+   * DP method
    ***********************************************************************/
   int DP(int A[], int n) {
     int* record = new int[n];
@@ -42,12 +46,18 @@ public:
     record[0] = 0;
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < i; j++) {
-        if(A[j] >= i - j)
-          record[i] = record[i] < record[j] + 1 ? record[i] : record[j] + 1;
+        /* if(A[j] >= i - j)
+           record[i] = record[i] < record[j] + 1 ? record[i] : record[j] + 1; */
+
+        // the if method below can pass, the if method above cause TEL
+        if (record[j] != n && A[j] >= i - j) {
+          record[i] = record[j] + 1;
+          break;
+        }
       }
     }
-
-    return record[n-1];
+    if (record[n-1] != n) return record[n-1];
+    else return -1;
   }
 
   /***********************************************************************
