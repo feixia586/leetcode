@@ -32,8 +32,8 @@ public:
     else return -1;
     // Note: even the return is minstep, you cannot say there exists a
     // solution, for example, [3, 2, 1, 0, 4, 5]. So you cannot use this method
-    // to determine whether there exists a solution. A good way to do that --
-    // DP (see Jump Game)
+    // to determine whether there exists a solution. Good way to do that --
+    // DP or change (i > ms_maxdis) to (i == ms_maxdis + 1) (see Jump Game)
   }
 
   /***********************************************************************
