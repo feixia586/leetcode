@@ -1,31 +1,43 @@
 #include <string>
+#include <vector>
 #include <cassert>
 
 using namespace std;
 
 class Solution {
 public:
+  // Here is the thought:
+  // Try to figure out the first number, then the second, the third...
+  // Each candidate of first number has (n-1)! forms
+  // Each candidate of second number has (n-2)! forms
   string getPermutation(int n, int k) {
-    assert(n >= 1);
     string str = "";
-    for (int i = 1; i <= n; i++) str += (char)(i + '0');
+
+    int factor = 1;
+    for (int i = 1; i < n; i++) { factor *= i; }
+
     k--;
-    for (int i = 0; i < n-1; i++) {
-      int sub_num = fact(n-i-1);
-      int sub = k / sub_num;
-      k = k % sub_num;
-      for (int j = i + sub; j > i; j--)
-        swap(str[j], str[j-1]);
+    vector<bool> used(n, false);
+    for (int i = 0; i < n; i++) {
+      int idx = k / factor;
+      k = k % factor;
+
+      int count = 0;
+      for (int j = 0; j < n; j++) {
+        if (used[j] == false) {
+          if (count == idx) {
+            str += ('0' + j + 1);
+            used[j] = true;
+            break;
+          }
+
+          count++;
+        }
+      }
+
+      if (i < n - 1) { factor = factor / (n - 1 - i); }
     }
 
     return str;
-  }
-
-  int fact(int n) {
-    int res = 1;
-    for (int i = 1; i <= n; i++) {
-      res *= i;
-    }
-    return res;
   }
 };
