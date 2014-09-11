@@ -11,6 +11,7 @@ public:
     string res_str = "";
 
     int aLen = a.length(), bLen = b.length();
+    assert(aLen > 0 && bLen > 0);
     int ap = aLen - 1, bp = bLen - 1;
 
     int carry = 0;
