@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include <regex>
 
 using namespace std;
@@ -95,4 +96,16 @@ public:
 
     return str;
   }
+
+  /***************************************************************************
+   * Java Regular Expression Method
+   ***************************************************************************/
+  /*
+   * String reg = "( )*[-+]?(\\d+\\.?|\\.\\d+)\\d*(e[-+]?\\d+)?( )*";
+   *    if (s.matches(reg)) {
+   *        return true;
+   *    } else {
+   *        return false;
+   *    }
+   */
 };
