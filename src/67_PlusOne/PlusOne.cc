@@ -1,4 +1,5 @@
 #include <vector>
+#include <algorithm>
 #include <cassert>
 
 using namespace std;
@@ -6,19 +7,22 @@ using namespace std;
 class Solution {
 public:
   vector<int> plusOne(vector<int> &digits) {
-    int size = digits.size();
-    assert(size > 0);
+    assert(digits.size() > 0);
 
-    vector<int> res;
+    int size = digits.size();
     int carry = 1;
+    vector<int> res;
     for (int i = size - 1; i >= 0; i--) {
-      int tmp = digits[i] + carry;
-      digits[i] = tmp % 10;
-      carry = tmp / 10;
+      int sum = digits[i] + carry;
+      carry = sum / 10;
+      res.push_back(sum % 10);
     }
 
-    if (carry > 0) res.push_back(carry);
-    res.insert(res.end(), digits.begin(), digits.end());
+    if (carry > 0) {
+      res.push_back(carry);
+    }
+
+    reverse(res.begin(), res.end());
 
     return res;
   }
