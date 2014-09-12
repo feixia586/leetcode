@@ -25,7 +25,8 @@ public:
    * Dynamic Programming.
    *************************************************************/
   int DP(int n) {
-    assert(n >= 0);
+    assert(n > 0);
+
     vector<int> arr(n+1, 0);
     arr[0] = 1; arr[1] = 1;
     for (int i = 2; i <= n; i++)
@@ -34,18 +35,20 @@ public:
     return arr[n];
   }
 
-   /*************************************************************
+  /*************************************************************
    * Dynamic Programming -- optimized, Space O(1)
    *************************************************************/
   int DP_Optimized(int n) {
-        vector<int> ways(3, 0);
-        ways[0] = 1;
-        ways[1] = 1;
+    assert(n > 0);
 
-        for (int i = 2; i <= n; i++) {
-            ways[i % 3] = ways[(i - 1) % 3] + ways[(i - 2) % 3];
-        }
+    vector<int> ways(3, 0);
+    ways[0] = 1;
+    ways[1] = 1;
 
-        return ways[n % 3];
+    for (int i = 2; i <= n; i++) {
+      ways[i % 3] = ways[(i - 1) % 3] + ways[(i - 2) % 3];
     }
+
+    return ways[n % 3];
+  }
 };
