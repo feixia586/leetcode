@@ -11,22 +11,28 @@ class Solution {
 public:
   // Corner cases: only one node
   ListNode *detectCycle(ListNode *head) {
-    if (head == NULL || head->next == NULL) return NULL;
-    ListNode *slow = head, *fast = head;
+    if (head == NULL) {
+      return NULL;
+    }
 
-    while(fast != NULL && fast->next != NULL) {
+    ListNode *slow = head, *fast = head;
+    bool moved = false;
+    while (fast->next != NULL && fast->next->next != NULL) {
       slow = slow->next;
       fast = fast->next->next;
-      if (fast == slow) break;
+      moved = true;
+      if (slow == fast) {
+        break;
+      }
     }
 
-    if (fast == slow) {
+    if (slow == fast && moved) {
       fast = head;
-      while(fast != slow) { fast = fast->next; slow = slow->next; }
+      while (fast != slow) { slow = slow->next; fast = fast->next; }
       return slow;
-    }
-    else
+    } else {
       return NULL;
+    }
   }
 
 };
