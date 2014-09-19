@@ -4,6 +4,8 @@ using namespace std;
 
 class Solution {
 public:
+    // worst case of this problem is O(n). 
+    // Example: 1 1 1 1 2 1 1 1 (give 1 when being searched, give 2 at last)
     bool search(int A[], int n, int target) {
         int low = 0, high = n - 1;
         while (low + 1 < high) {
