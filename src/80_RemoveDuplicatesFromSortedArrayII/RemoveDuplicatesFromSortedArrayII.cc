@@ -9,14 +9,13 @@ public:
       return n;
     }
 
-    int k = 0;
+    int k = 1;
     for (int i = 2; i < n; i++) {
-      if (A[i] != A[k] || A[i] != A[k+1]) {
-        k++;
-        A[k+1] = A[i];
+      if (A[i] != A[k] || A[i] != A[k - 1]) {
+        A[++k] = A[i];
       }
     }
 
-    return k+2;
+    return k + 1;
   }
 };
