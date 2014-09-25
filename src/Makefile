@@ -160,6 +160,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./149_MaxPointsOnALine/MaxPointsOnALine.o \
 		  ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation.o \
 		  ./151_ReverseWordsInAString/ReverseWordsInAString.o \
+		  ./152_MaximumProductSubarray/MaximumProductSubarray.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -313,6 +314,7 @@ TESTS = helloworld_test \
 		MaxPointsOnALine_test \
 		EvaluateReversePolishNotation_test \
 		ReverseWordsInAString_test \
+		MaximumProductSubarray_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -626,6 +628,8 @@ MaxPointsOnALine_test: ./149_MaxPointsOnALine/MaxPointsOnALine_test.cc ./149_Max
 EvaluateReversePolishNotation_test: ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation_test.cc ./150_EvaluateReversePolishNotation/EvaluateReversePolishNotation.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 ReverseWordsInAString_test: ./151_ReverseWordsInAString/ReverseWordsInAString_test.cc ./151_ReverseWordsInAString/ReverseWordsInAString.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+MaximumProductSubarray_test: ./152_MaximumProductSubarray/MaximumProductSubarray_test.cc ./152_MaximumProductSubarray/MaximumProductSubarray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
