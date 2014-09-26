@@ -7,7 +7,8 @@ class Solution {
 public:
   vector<int> grayCode(int n) {
     vector<int> res;
-    for (unsigned int i = 0; i < pow(2, n); i++) {
+    unsigned int num = pow(2, n);
+    for (unsigned int i = 0; i < num; i++) {
       res.push_back(binary2Gray(i));
     }
 
