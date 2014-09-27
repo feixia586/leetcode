@@ -24,7 +24,7 @@ public:
   }
 
   /*******************************************************************
-   * inorder traversal method
+   * inorder traversal method -- recommended
    *******************************************************************/
   bool isValidBSTHelper_M1(TreeNode *root, int &prev) {
     if (root == NULL) {
