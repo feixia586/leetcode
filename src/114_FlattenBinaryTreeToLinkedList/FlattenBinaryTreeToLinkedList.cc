@@ -60,4 +60,24 @@ public:
     flattenHelperM2(root->left, lastOne);
     flattenHelperM2(savedRight, lastOne);
   }
+
+  /*******************************************************
+   * Method 3
+   *******************************************************/
+  void IterWay(TreeNode *root) {
+    if (root == NULL) {
+      return;
+    }
+
+    while (root != NULL) {
+      if (root->left != NULL) {
+        TreeNode *node = root->left;
+        while (node->right) node = node->right;
+        node->right = root->right;
+        root->right = root->left;
+        root->left = NULL;
+      }
+      root = root->right;
+    }
+  }
 };
