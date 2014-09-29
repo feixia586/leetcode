@@ -19,7 +19,7 @@ public:
     TreeLinkNode *prevHead = root;
     while (prevHead) {
       TreeLinkNode *crntHead = NULL;
-      TreeLinkNode *pre = NULL;
+      TreeLinkNode *p = NULL;
       for (; prevHead; prevHead = prevHead->next) {
         if (prevHead->left == NULL && prevHead->right == NULL) { continue; }
         if (crntHead == NULL) {
@@ -27,12 +27,12 @@ public:
         }
 
         if (prevHead->left) {
-          if (pre) { pre->next = prevHead->left; pre = pre->next; }
-          else { pre = prevHead->left; }
+          if (p) { p->next = prevHead->left; p = p->next; }
+          else { p = prevHead->left; }
         }
         if (prevHead->right) {
-          if (pre) { pre->next = prevHead->right; pre = pre->next; }
-          else { pre = prevHead->right; }
+          if (p) { p->next = prevHead->right; p = p->next; }
+          else { p = prevHead->right; }
         }
       }
 
