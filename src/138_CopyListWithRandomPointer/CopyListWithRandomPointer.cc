@@ -36,16 +36,12 @@ public:
 
     p = head;
     RandomListNode dummy(0);
-    RandomListNode *q = &dummy;
-    q->next = p->next;
-    q = q->next;
+    RandomListNode *crnt = &dummy;
     while (p != NULL) {
+      crnt->next = p->next;
+      crnt = crnt->next;
       p->next = p->next->next;
       p = p->next;
-      if (q->next) {
-        q->next = q->next->next;
-        q = q->next;
-      }
     }
 
     return dummy.next;
