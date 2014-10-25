@@ -16,9 +16,10 @@ public:
     while (low + 1 < high) {
       int mid = low + (high - low) / 2;
 
-      if ((mid == 0 && num[mid] < num[high]) || (mid > 0 && num[mid] < num[mid - 1])) {
+      // The if block here is not necessary
+      /*if ((mid == 0 && num[mid] < num[high]) || (mid > 0 && num[mid] < num[mid - 1])) {
         return num[mid];
-      }
+      }*/
 
       // find the unsorted part, the minimum value must be there
       if (num[mid] > num[high]) {
