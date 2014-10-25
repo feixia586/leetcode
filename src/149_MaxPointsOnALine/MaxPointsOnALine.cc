@@ -55,14 +55,12 @@ public:
           slope = (p2.y - p1.y) / (double)(p2.x - p1.x);
         }
 
-        int tmp;
         if (umap.find(slope) == umap.end()) {
           umap[slope] = 2;
-          tmp = 2;
         } else {
-          tmp = ++umap[slope];
+          ++umap[slope];
         }
-        thisMax = max(thisMax, tmp);
+        thisMax = max(thisMax, umap[slope]);
       }
 
       res = max(thisMax + samePos, res);
