@@ -162,6 +162,7 @@ OBJECTS = ./0_start/helloworld.o \
 		  ./151_ReverseWordsInAString/ReverseWordsInAString.o \
 		  ./152_MaximumProductSubarray/MaximumProductSubarray.o \
 		  ./153_FindMinimumInRotatedSortedArray/FindMinimumInRotatedSortedArray.o \
+		  ./154_FindMinimumInRotatedSortedArrayII/FindMinimumInRotatedSortedArrayII.o \
 
 TESTS = helloworld_test \
 		TwoSum_test \
@@ -317,6 +318,7 @@ TESTS = helloworld_test \
 		ReverseWordsInAString_test \
 		MaximumProductSubarray_test \
 		FindMinimumInRotatedSortedArray_test \
+		FindMinimumInRotatedSortedArrayII_test \
 
 all: gtest $(OBJECTS) $(TESTS)
 
@@ -634,6 +636,8 @@ ReverseWordsInAString_test: ./151_ReverseWordsInAString/ReverseWordsInAString_te
 MaximumProductSubarray_test: ./152_MaximumProductSubarray/MaximumProductSubarray_test.cc ./152_MaximumProductSubarray/MaximumProductSubarray.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 FindMinimumInRotatedSortedArray_test: ./153_FindMinimumInRotatedSortedArray/FindMinimumInRotatedSortedArray_test.cc ./153_FindMinimumInRotatedSortedArray/FindMinimumInRotatedSortedArray.o
+	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
+FindMinimumInRotatedSortedArrayII_test: ./154_FindMinimumInRotatedSortedArrayII/FindMinimumInRotatedSortedArrayII_test.cc ./154_FindMinimumInRotatedSortedArrayII/FindMinimumInRotatedSortedArrayII.o
 	$(CC) $(CFLAGS) $^ $(GTEST) -o $@
 
 clean:
