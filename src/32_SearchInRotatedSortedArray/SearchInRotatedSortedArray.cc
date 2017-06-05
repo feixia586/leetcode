@@ -2,28 +2,30 @@ class Solution {
 public:
   int search(int A[], int n, int target) {
     int low = 0, high = n - 1;
-    int mid;
-
-    // Note "<="
-    while (low <= high) {
-      mid = (low + high) / 2;
-      if (A[mid] == target)
+    while (low + 1 < high) {
+      int mid = low + (high - low) / 2;
+      if (target == A[mid]) {
         return mid;
-
-      // Note ">="
-      if (A[mid] >= A[low]) { // the left half is sorted
-        if (target < A[mid] && target >= A[low])
-          high = mid - 1;
-        else
-          low = mid + 1;
-      } else { // the right half is sorted
-        if (target > A[mid] && target <= A[high])
-          low = mid + 1;
-        else
-          high = mid - 1;
+      }
+            
+      if (A[mid] >= A[low]) {
+        if (target >= A[low] && target < A[mid]) {
+          high = mid;
+        } else {
+          low = mid;
+        }
+      } else {
+        if (target <= A[high] && target > A[mid]) {
+          low = mid;
+        } else {
+          high = mid;
+        }
       }
     }
-
+        
+    if (target == A[low]) return low;
+    if (target == A[high]) return high;
+        
     return -1;
   }
 };
